@@ -16,10 +16,11 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 	{
 		$package
 			->name('brave-scaffold')
-			->hasCommands([
+			->hasCommands(
+				[
 					NewsScaffoldCommand::class,
 					PersonScaffoldCommand::class,
-					KnowledgebaseScaffoldCommand::class
+					KnowledgebaseScaffoldCommand::class,
 				]
 			);
 	}

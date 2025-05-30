@@ -28,7 +28,7 @@ class PersonScaffoldCommand extends Command
 	public function handle(): void
 	{
 		$this->call('vendor:publish', [
-			'--provider' => "Yard\\Brave\\Scaffold\\ScaffoldServiceProvider",
+			'--provider' => 'Yard\\Brave\\Scaffold\\ScaffoldServiceProvider',
 			'--tag' => 'person',
 		]);
 	}
