@@ -6,8 +6,6 @@
 [![Code Coverage Badge](https://github.com/yardinternet/brave-scaffold/blob/badges/coverage.svg)](https://github.com/yardinternet/brave-scaffold/actions/workflows/badges.yml)
 [![Lines of Code Badge](https://github.com/yardinternet/brave-scaffold/blob/badges/lines-of-code.svg)](https://github.com/yardinternet/brave-scaffold/actions/workflows/badges.yml)
 
-
-
 ## Requirements
 
 - [Sage](https://github.com/roots/sage) >= 10.0
@@ -38,22 +36,13 @@ To install this package using Composer, follow these steps:
     wp acorn package:discover
     ```
 
-You can publish the config file with:
-
-```shell
-wp acorn vendor:publish --provider="Yard\Brave\Scaffold\ScaffoldServiceProvider"
-```
-
 ## Usage
 
-From a Blade template:
-
-```blade
-@include('brave-scaffold::scaffold')
-```
-
-From WP-CLI:
+This package provides a set of scaffolding commands to help you quickly set up common content types
+in [Brave](https://github.com/yardinternet/brave).
 
 ```shell
-wp acorn scaffold
+wp acorn scaffold:news
+wp acorn scaffold:person
+wp acorn scaffold:knowledgebase
 ```
