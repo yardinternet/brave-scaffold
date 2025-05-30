@@ -2,30 +2,30 @@
 
 declare(strict_types=1);
 
-namespace Yard\SkeletonPackage;
+namespace Yard\Brave\Scaffold;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Yard\SkeletonPackage\Console\ExampleCommand;
+use Yard\Brave\Scaffold\Console\ScaffoldCommand;
 
-class SkeletonPackageServiceProvider extends PackageServiceProvider
+class ScaffoldServiceProvider extends PackageServiceProvider
 {
 	public function configurePackage(Package $package): void
 	{
 		$package
-			->name('skeleton-package')
+			->name('brave-scaffold')
 			->hasConfigFile()
 			->hasViews()
-			->hasCommand(ExampleCommand::class);
+			->hasCommand(ScaffoldCommand::class);
 	}
 
 	public function packageRegistered(): void
 	{
-		$this->app->singleton(Example::class, fn () => new Example($this->app));
+		$this->app->singleton(Scaffold::class, fn () => new Scaffold($this->app));
 	}
 
 	public function packageBooted(): void
 	{
-		$this->app->make(Example::class);
+		$this->app->make(Scaffold::class);
 	}
 }

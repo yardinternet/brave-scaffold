@@ -1,11 +1,11 @@
 {
-	"name": "yard/skeleton-package",
+	"name": "yard/brave-scaffold",
 	"type": "package",
-	"description": ":package_description",
+	"description": "Scaffold commands for Brave",
 	"license": "MIT",
 	"support": {
-		"source": "https://github.com/yardinternet/skeleton-package",
-		"issues": "https://github.com/yardinternet/skeleton-package/issues"
+		"source": "https://github.com/yardinternet/brave-scaffold",
+		"issues": "https://github.com/yardinternet/brave-scaffold/issues"
 	},
 	"config": {
 		"sort-packages": true,
@@ -31,12 +31,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Yard\\SkeletonPackage\\": "src/"
+			"Yard\\Brave\\Scaffold\\": "src/"
 		}
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Yard\\SkeletonPackage\\Tests\\": "tests/"
+			"Yard\\Brave\\Scaffold\\Tests\\": "tests/"
 		}
 	},
 	"scripts": {
@@ -58,7 +58,7 @@
 	"extra": {
 		"acorn": {
 			"providers": [
-				"Yard\\SkeletonPackage\\SkeletonPackageServiceProvider"
+				"Yard\\Brave\\Scaffold\\ScaffoldServiceProvider"
 			]
 		}
 	}

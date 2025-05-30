@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Yard\SkeletonPackage;
+namespace Yard\Brave\Scaffold;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Arr;
 use Webmozart\Assert\Assert;
 
-class Example
+class Scaffold
 {
 	/**
-	 * Create a new Example instance.
+	 * Create a new Scaffold instance.
 	 */
 	public function __construct(protected Application $app)
 	{
@@ -22,7 +22,7 @@ class Example
 	 */
 	public function getQuote(): string
 	{
-		$quotes = config('skeleton-package.quotes');
+		$quotes = config('brave-scaffold.quotes');
 
 		Assert::isArray($quotes);
 

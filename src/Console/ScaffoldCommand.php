@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Yard\SkeletonPackage\Console;
+namespace Yard\Brave\Scaffold\Console;
 
 use Illuminate\Console\Command;
-use Yard\SkeletonPackage\Example;
+use Yard\Brave\Scaffold\Scaffold;
 
-class ExampleCommand extends Command
+class ScaffoldCommand extends Command
 {
 	/**
 	 * The name and signature of the console command.
 	 *
 	 * @var string
 	 */
-	protected $signature = 'example';
+	protected $signature = 'scaffold';
 
 	/**
 	 * The console command description.
@@ -29,7 +29,7 @@ class ExampleCommand extends Command
 	public function handle(): void
 	{
 		$this->info(
-			app(Example::class)->getQuote()
+			app(Scaffold::class)->getQuote()
 		);
 	}
 }
