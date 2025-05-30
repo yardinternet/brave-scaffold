@@ -1,0 +1,58 @@
+{
+	"key": "group_66e0254a243fd",
+	"title": "Kennisbank instellingen",
+	"fields": [
+		{
+			"key": "field_66e0254a9ae6e",
+			"label": "Gerelateerde artikelen",
+			"name": "knowledgebase_related",
+			"aria-label": "",
+			"type": "relationship",
+			"instructions": "Standaard worden er 3 artikelen van hetzelfde type getoond. Als je zelf wilt bepalen welke artikelen getoond moeten worden, dan kun je dat hier selecteren.",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"post_type": [
+				"knowledgebase"
+			],
+			"post_status": [
+				"publish"
+			],
+			"taxonomy": "",
+			"filters": [
+				"search",
+				"taxonomy"
+			],
+			"return_format": "object",
+			"min": "",
+			"max": 3,
+			"allow_in_bindings": 0,
+			"elements": "",
+			"bidirectional": 0,
+			"bidirectional_target": []
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "knowledgebase"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "left",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1726041498
+}
