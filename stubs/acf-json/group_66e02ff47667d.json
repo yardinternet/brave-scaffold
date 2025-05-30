@@ -1,0 +1,87 @@
+{
+	"key": "group_66e02ff47667d",
+	"title": "Persoon instellingen",
+	"fields": [
+		{
+			"key": "field_66e02ff422b9c",
+			"label": "Functie",
+			"name": "person_function",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"allow_in_bindings": 0,
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_66e0301122b9d",
+			"label": "E-mailadres",
+			"name": "person_email",
+			"aria-label": "",
+			"type": "email",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"allow_in_bindings": 0,
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		},
+		{
+			"key": "field_66e0302222b9e",
+			"label": "Telefoonnummer",
+			"name": "person_phone",
+			"aria-label": "",
+			"type": "text",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"default_value": "",
+			"maxlength": "",
+			"allow_in_bindings": 0,
+			"placeholder": "",
+			"prepend": "",
+			"append": ""
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "person"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "left",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"modified": 1725969415
+}
