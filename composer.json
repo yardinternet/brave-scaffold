@@ -2,6 +2,9 @@
 	"name": "yard/brave-scaffold",
 	"type": "package",
 	"description": "Scaffold commands for Brave",
+	"keywords": [
+		"dev"
+	],
 	"license": "MIT",
 	"support": {
 		"source": "https://github.com/yardinternet/brave-scaffold",
