@@ -20,7 +20,7 @@ class KnowledgebaseScaffoldCommand extends Command
 	 *
 	 * @var string
 	 */
-	protected $description = 'Scaffold knowledgebase module';
+	protected $description = 'Scaffold knowledgebase';
 
 	/**
 	 * Execute the console command.
