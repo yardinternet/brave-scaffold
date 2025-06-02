@@ -37,20 +37,23 @@ class ChildThemeScaffoldCommand extends Command
 		$source = dirname(__DIR__, 2) . '/stubs/sage-child';
 		$destination = dirname(base_path()) . '/' . $slug;
 
-		if (!File::exists($source)) {
+		if (! File::exists($source)) {
 			$this->error("Source directory does not exist: $source");
+
 			return self::FAILURE;
 		}
 
 		if (File::exists($destination)) {
 			$this->error("Destination already exists: $destination");
+
 			return self::FAILURE;
 		}
 
 		$success = File::copyDirectory($source, $destination);
 
-		if (!$success) {
+		if (! $success) {
 			$this->error("Failed to copy files from $source to $destination");
+
 			return self::FAILURE;
 		}
 
