@@ -38,11 +38,25 @@ To install this package using Composer, follow these steps:
 
 ## Usage
 
+### Content types
+
 This package provides a set of scaffolding commands to help you quickly set up common content types
-in [Brave](https://github.com/yardinternet/brave).
+in [Brave](https://github.com/yardinternet/brave):
 
 ```shell
 wp acorn scaffold:news
 wp acorn scaffold:person
 wp acorn scaffold:knowledgebase
 ```
+
+### Child Themes
+
+To create a child theme you can run the following command. This will create a child theme directory in
+`web/app/themes/{slug}` that has Sage as the parent theme.
+
+```shell
+ wp acorn scaffold:sage-child {slug}
+ ```
+
+More information about child themes can be found in [Brave](https://github.com/yardinternet/brave)
+and [Sage Child Theme Support](https://github.com/yardinternet/sage-child-theme-support)

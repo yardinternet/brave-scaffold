@@ -20,7 +20,7 @@ class NewsScaffoldCommand extends Command
 	 *
 	 * @var string
 	 */
-	protected $description = 'Scaffold news module';
+	protected $description = 'Scaffold news content type';
 
 	/**
 	 * Execute the console command.
