@@ -20,7 +20,7 @@ class PersonScaffoldCommand extends Command
 	 *
 	 * @var string
 	 */
-	protected $description = 'Scaffold person module';
+	protected $description = 'Scaffold person content type';
 
 	/**
 	 * Execute the console command.
