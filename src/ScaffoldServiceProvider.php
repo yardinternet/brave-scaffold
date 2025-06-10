@@ -81,6 +81,8 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/config/facetwp/facets/project_type.php' => config_path('facetwp/facets/project_type.php'),
 			__DIR__ . '/../stubs/config/facetwp/templates/project.php' => config_path('facetwp/templates/project.php'),
 			__DIR__ . '/../stubs/config/poet/post/project.php' => config_path('poet/post/project.php'),
+			__DIR__ . '/../stubs/config/poet/taxonomy/project_region.php' => config_path('poet/taxonomy/project_region.php'),
+			__DIR__ . '/../stubs/config/poet/taxonomy/project_status.php' => config_path('poet/taxonomy/project_status.php'),
 			__DIR__ . '/../stubs/config/poet/taxonomy/project_type.php' => config_path('poet/taxonomy/project_type.php'),
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/loops/project-loop.blade.php' => resource_path('views/blocks/FacetWP/loops/project-loop.blade.php'),
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/templates/project.blade.php' => resource_path('views/blocks/FacetWP/templates/project.blade.php'),

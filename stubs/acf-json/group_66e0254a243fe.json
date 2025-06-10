@@ -4,11 +4,11 @@
 	"fields": [
 		{
 			"key": "field_66e0254a9ae6e",
-			"label": "Gerelateerde artikelen",
+			"label": "Gerelateerde projecten",
 			"name": "project_related",
 			"aria-label": "",
 			"type": "relationship",
-			"instructions": "Standaard worden er 3 artikelen van hetzelfde type getoond. Als je zelf wilt bepalen welke artikelen getoond moeten worden, dan kun je dat hier selecteren.",
+			"instructions": "Standaard worden er 3 projecten van hetzelfde type getoond. Als je zelf wilt bepalen welke projecten getoond moeten worden, dan kun je dat hier selecteren.",
 			"required": 0,
 			"conditional_logic": 0,
 			"wrapper": {
