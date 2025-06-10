@@ -10,6 +10,7 @@ use Yard\Brave\Scaffold\Console\ChildThemeScaffoldCommand;
 use Yard\Brave\Scaffold\Console\KnowledgebaseScaffoldCommand;
 use Yard\Brave\Scaffold\Console\NewsScaffoldCommand;
 use Yard\Brave\Scaffold\Console\PersonScaffoldCommand;
+use Yard\Brave\Scaffold\Console\ProjectScaffoldCommand;
 
 class ScaffoldServiceProvider extends PackageServiceProvider
 {
@@ -20,9 +21,10 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			->hasCommands(
 				[
 					ChildThemeScaffoldCommand::class,
+					KnowledgebaseScaffoldCommand::class,
 					NewsScaffoldCommand::class,
 					PersonScaffoldCommand::class,
-					KnowledgebaseScaffoldCommand::class,
+					ProjectScaffoldCommand::class,
 				]
 			);
 	}
@@ -68,5 +70,21 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/resources/views/partials/content-single-person.blade.php' => resource_path('views/partials/content-single-person.blade.php'),
 			__DIR__ . '/../stubs/acf-json/group_66e02ff47667d.json' => base_path('acf-json/group_66e02ff47667d.json'),
 		], 'person');
+
+		$this->publishes([
+			__DIR__ . '/../stubs/acf-json/group_66e0254a243fe.json' => base_path('acf-json/group_66e0254a243fe.json'),
+			__DIR__ . '/../stubs/Data/ProjectData.php' => app_path('Data/ProjectData.php'),
+			__DIR__ . '/../stubs/View/Components/Card/Project.php' => app_path('View/Components/Card/Project.php'),
+			__DIR__ . '/../stubs/config/facetwp/facets/project_region.php' => config_path('facetwp/facets/project_region.php'),
+			__DIR__ . '/../stubs/config/facetwp/facets/project_result_count.php' => config_path('facetwp/facets/project_result_count.php'),
+			__DIR__ . '/../stubs/config/facetwp/facets/project_status.php' => config_path('facetwp/facets/project_status.php'),
+			__DIR__ . '/../stubs/config/facetwp/facets/project_type.php' => config_path('facetwp/facets/project_type.php'),
+			__DIR__ . '/../stubs/config/facetwp/templates/project.php' => config_path('facetwp/templates/project.php'),
+			__DIR__ . '/../stubs/config/poet/post/project.php' => config_path('poet/post/project.php'),
+			__DIR__ . '/../stubs/config/poet/taxonomy/project_type.php' => config_path('poet/taxonomy/project_type.php'),
+			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/loops/project-loop.blade.php' => resource_path('views/blocks/FacetWP/loops/project-loop.blade.php'),
+			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/templates/project.blade.php' => resource_path('views/blocks/FacetWP/templates/project.blade.php'),
+			__DIR__ . '/../stubs/resources/views/partials/content-single-project.blade.php' => resource_path('views/partials/content-single-project.blade.php'),
+		], 'project');
 	}
 }
