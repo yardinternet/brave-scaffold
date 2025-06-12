@@ -2,8 +2,9 @@
 
 <h1>{!! $postData->title() !!}</h1>
 
-@if ($postData->isParent() || $postData->isChild())
-	<div class="my-10 flex items-baseline font-medium">
+@if ($postData->isParent() || $postData->isChild() || $postData->isInformationPost)
+	<div class="my-10 flex items-center gap-3">
+		<span class="bg-primary size-2 rounded-full"></span>
 		@if ($postData->isParent())
 			<div>Hoofdproject</div>
 			<a href="#deelprojecten">
@@ -30,7 +31,8 @@
 
 <hr class="wp-block-separator" />
 
-@include('partials.social-share')
+<x-social.share />
+
 @if ($postData->isParent())
 	<h2 id="deelprojecten" class="alignwide">
 		Deelproject{{ $postData->children()->count() > 1 ? 'en' : '' }}:</h2>

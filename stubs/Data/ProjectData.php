@@ -49,17 +49,20 @@ class ProjectData extends PostData
 
 	public function isChild(): bool
 	{
-		$ancestors = get_post_ancestors($this->id);
+		$parent = get_post_parent($this->id);
 
-		// Filter out the children of the children.
-		return empty($ancestors) ? has_post_parent($this->id) : count(get_post_ancestors(end($ancestors))) === 0;
+		if (! $parent) {
+			return false;
+		}
+
+		return $parent instanceof \WP_Post;
 	}
 
 	public function parent(): ?ProjectData
 	{
 		$post = get_post_parent($this->id);
 
-		return $post ? ProjectData::fromPost($post) : null;
+		return $post instanceof \WP_Post ? ProjectData::fromPost($post) : null
 	}
 
 	public function children(): Collection
@@ -75,12 +78,12 @@ class ProjectData extends PostData
 			return collect();
 		}
 
-		return collect(ProjectData::collect($children));
+		return ProjectData::collect($children, Collection::class);
 	}
 
 	public function related(): Collection
 	{
-		return collect(ProjectData::collect($this->related));
+		return ProjectData::collect($this->related, Collection::class);
 	}
 
 	public function cardSubtitle(): string
