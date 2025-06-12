@@ -4,7 +4,7 @@
 
 {!! $postData->content() !!}
 
-@include('partials.social-share')
+<x-social.share />
 
 @if ($postData->related()->isNotEmpty())
 	<h2 class="alignwide !mt-12 mb-0 xl:!mt-16">Bekijk ook</h2>

@@ -2,6 +2,6 @@
 	@forelse ($postDataCollection as $postData)
 		<x-card.person :postData="$postData" />
 	@empty
-		@include('blocks.FacetWP.partials.no-results', ['class' => '@lg:col-span-2 @3xl:col-span-3'])
+		<x-facetwp.no-results />
 	@endforelse
 </div>

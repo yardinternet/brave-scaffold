@@ -2,6 +2,6 @@
 	@forelse ($postDataCollection as $postData)
 		<x-card.knowledgebase class="card-horizontal" :postData="$postData" />
 	@empty
-		@include('blocks.FacetWP.partials.no-results')
+		<x-facetwp.no-results />
 	@endforelse
 </div>
