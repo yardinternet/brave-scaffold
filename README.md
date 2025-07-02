@@ -44,9 +44,10 @@ This package provides a set of scaffolding commands to help you quickly set up c
 in [Brave](https://github.com/yardinternet/brave):
 
 ```shell
+wp acorn scaffold:knowledgebase
 wp acorn scaffold:news
 wp acorn scaffold:person
-wp acorn scaffold:knowledgebase
+wp acorn scaffold:project
 ```
 
 ### Child Themes
