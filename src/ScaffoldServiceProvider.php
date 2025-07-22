@@ -7,6 +7,7 @@ namespace Yard\Brave\Scaffold;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Yard\Brave\Scaffold\Console\ChildThemeScaffoldCommand;
+use Yard\Brave\Scaffold\Console\ConfigureCommand;
 use Yard\Brave\Scaffold\Console\KnowledgebaseScaffoldCommand;
 use Yard\Brave\Scaffold\Console\NewsScaffoldCommand;
 use Yard\Brave\Scaffold\Console\PersonScaffoldCommand;
@@ -21,6 +22,7 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			->hasCommands(
 				[
 					ChildThemeScaffoldCommand::class,
+					ConfigureCommand::class,
 					KnowledgebaseScaffoldCommand::class,
 					NewsScaffoldCommand::class,
 					PersonScaffoldCommand::class,
