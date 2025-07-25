@@ -60,4 +60,14 @@ To create a child theme you can run the following command. This will create a ch
  ```
 
 More information about child themes can be found in [Brave](https://github.com/yardinternet/brave)
-and [Sage Child Theme Support](https://github.com/yardinternet/sage-child-theme-support)
+and [Nutshell](https://github.com/yardinternet/nutshell)
+
+### Configure project
+
+To configure a new project after cloning the template repo run:
+
+```shell
+wp acorn configure
+```
+
+This will find all `*.example` files in a project and give you the opportunity to create files based on those example files.
