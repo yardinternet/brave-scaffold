@@ -69,12 +69,12 @@ class ConfigureCommand extends Command
 
 			if (file_exists($newFilePath) && ! is_writable($newFilePath)) {
 				$this->error("File {$newFilePath} is not writable. Skipping.");
+
 				continue;
 			}
 
 			// Do the replacements
 			if (str_starts_with($newFileName, '.env')) {
-
 				$parsedEnv = $this->parseEnvFile($file->getContents());
 				if (null === $parsedEnv) {
 					$this->error("Failed to parse .env file: {$file->getFilename()}.");
@@ -125,11 +125,11 @@ class ConfigureCommand extends Command
 					$value = 'development';
 					// no break
 				case 'WP_HOME':
-					$value = "https://{{project}}.lndo.site";
+					$value = 'https://{{project}}.lndo.site';
 
 					break;
 				case 'DOMAIN_CURRENT_SITE':
-					$value = "{{project}}.lndo.site";
+					$value = '{{project}}.lndo.site';
 
 					break;
 				case 'WP_SITEURL':
@@ -156,9 +156,9 @@ class ConfigureCommand extends Command
 		}
 
 		return preg_replace_callback(
-		'/^(?P<key>[a-zA-Z_]+[a-zA-Z0-9_])*=(?P<value>.+)$/m',
-				fn (array $matches): string => isset($dotEnv[$matches['key']]) ? $matches['key'] . '=' . $dotEnv[$matches['key']] : $matches[0],
-				$file
+			'/^(?P<key>[a-zA-Z_]+[a-zA-Z0-9_])*=(?P<value>.+)$/m',
+			fn (array $matches): string => isset($dotEnv[$matches['key']]) ? $matches['key'] . '=' . $dotEnv[$matches['key']] : $matches[0],
+			$file
 		);
 	}
 
