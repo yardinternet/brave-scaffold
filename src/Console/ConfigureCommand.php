@@ -63,74 +63,27 @@ class ConfigureCommand extends Command
 				continue;
 			};
 
+			if (file_exists($newFilePath) && ! $this->confirm("{$newFileName} already exists. Do you want to overwrite it?", false)) {
+				continue;
+			}
+
 			if (file_exists($newFilePath) && ! is_writable($newFilePath)) {
 				$this->error("File {$newFilePath} is not writable. Skipping.");
-
 				continue;
 			}
 
 			// Do the replacements
 			if (str_starts_with($newFileName, '.env')) {
-				$dotEnv = Dotenv::parse($file->getContents());
 
-				//TODO: move to seperate function
-				foreach ($dotEnv as $key => $value) {
-					switch ($key) {
-						case 'DB_HOST':
-							$value = 'database';
+				$parsedEnv = $this->parseEnvFile($file->getContents());
+				if (null === $parsedEnv) {
+					$this->error("Failed to parse .env file: {$file->getFilename()}.");
 
-							break;
-						case 'DB_NAME':
-						case 'DB_USER':
-						case 'DB_PASSWORD':
-							$value = 'wordpress';
-
-							break;
-						case 'WP_ENV':
-							$value = 'development';
-							// no break
-						case 'WP_HOME':
-							$value = "https://{$project}.lndo.site";
-
-							break;
-						case 'DOMAIN_CURRENT_SITE':
-							$value = "{$project}.lndo.site";
-
-							break;
-						case 'WP_SITEURL':
-							// Keep the default interpolated value
-							continue 2;
-						case 'AUTH_KEY':
-						case 'SECURE_AUTH_KEY':
-						case 'LOGGED_IN_KEY':
-						case 'NONCE_KEY':
-						case 'AUTH_SALT':
-						case 'SECURE_AUTH_SALT':
-						case 'LOGGED_IN_SALT':
-						case 'NONCE_SALT':
-							$value = base64_encode(random_bytes(64));
-
-							break;
-						default:
-							$value = $this->ask("Please provide a value for {$key}", $value);
-
-							break;
-					}
-
-					$dotEnv[$key] = "'" . $value . "'";
+					continue;
 				}
-
-				$parsedContent = preg_replace_callback(
-					'/^(?P<key>[a-zA-Z_]+[a-zA-Z0-9_])*=(?P<value>.+)$/m',
-					fn (array $matches): string => isset($dotEnv[$matches['key']]) ? $matches['key'] . '=' . $dotEnv[$matches['key']] : $matches[0],
-					$file->getContents()
-				);
+				$parsedContent = $this->replacePlaceholders($parsedEnv, $replacements);
 			} else {
-				$parsedContent = preg_replace_callback(
-					'/\{\{\s*([\w\.\/-]+)\s*\}\}/',
-					fn (array $matches): string => $replacements[$matches[1]] ?? $matches[0],
-					$file->getContents()
-				);
+				$parsedContent = $this->replacePlaceholders($file->getContents(), $replacements);
 			}
 
 			if (null === $parsedContent) {
@@ -145,9 +98,79 @@ class ConfigureCommand extends Command
 		}
 
 		// Update composer.json
-		$process = Process::fromShellCommandline('composer config name yard/' . $project, $root);
+		$name = 'yard/' . $project;
+		$process = Process::fromShellCommandline('composer config name ' . $name, $root);
 		$process->run();
 
 		return self::SUCCESS;
+	}
+
+	protected function parseEnvFile(string $file): ?string
+	{
+		$dotEnv = Dotenv::parse($file);
+
+		foreach ($dotEnv as $key => $value) {
+			switch ($key) {
+				case 'DB_HOST':
+					$value = 'database';
+
+					break;
+				case 'DB_NAME':
+				case 'DB_USER':
+				case 'DB_PASSWORD':
+					$value = 'wordpress';
+
+					break;
+				case 'WP_ENV':
+					$value = 'development';
+					// no break
+				case 'WP_HOME':
+					$value = "https://{{project}}.lndo.site";
+
+					break;
+				case 'DOMAIN_CURRENT_SITE':
+					$value = "{{project}}.lndo.site";
+
+					break;
+				case 'WP_SITEURL':
+					// Keep the default interpolated value
+					continue 2;
+				case 'AUTH_KEY':
+				case 'SECURE_AUTH_KEY':
+				case 'LOGGED_IN_KEY':
+				case 'NONCE_KEY':
+				case 'AUTH_SALT':
+				case 'SECURE_AUTH_SALT':
+				case 'LOGGED_IN_SALT':
+				case 'NONCE_SALT':
+					$value = base64_encode(random_bytes(64));
+
+					break;
+				default:
+					$value = $this->ask("Please provide a value for {$key}", $value);
+
+					break;
+			}
+
+			$dotEnv[$key] = "'" . $value . "'";
+		}
+
+		return preg_replace_callback(
+		'/^(?P<key>[a-zA-Z_]+[a-zA-Z0-9_])*=(?P<value>.+)$/m',
+				fn (array $matches): string => isset($dotEnv[$matches['key']]) ? $matches['key'] . '=' . $dotEnv[$matches['key']] : $matches[0],
+				$file
+		);
+	}
+
+	/**
+	 * @param array<string, string> $replacements
+	 */
+	protected function replacePlaceholders(string $content, array $replacements): ?string
+	{
+		return preg_replace_callback(
+			'/\{\{\s*([\w\.\/-]+)\s*\}\}/',
+			fn (array $matches): string => $replacements[$matches[1]] ?? $matches[0],
+			$content
+		);
 	}
 }
