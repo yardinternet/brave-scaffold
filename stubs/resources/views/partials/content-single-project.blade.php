@@ -36,7 +36,7 @@
 @if ($postData->isParent())
 	<h2 id="deelprojecten" class="alignwide">
 		Deelproject{{ $postData->children()->count() > 1 ? 'en' : '' }}:</h2>
-	<div class="container mt-5 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+	<div class="container mt-5 grid grid-cols-12 gap-4">
 		@foreach ($postData->children() as $child)
 			<x-card.project :postData="$child" />
 		@endforeach
@@ -46,7 +46,7 @@
 @if ($postData->related()->isNotEmpty())
 	<h2 id="deelprojecten" class="alignwide">Gerelateerde
 		project{{ $postData->related()->count() > 1 ? 'en' : '' }}</h2>
-	<div class="container mt-5 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+	<div class="container mt-5 grid grid-cols-12 gap-4">
 		@foreach ($postData->related() as $related)
 			<x-card.project :postData="$related" />
 		@endforeach
