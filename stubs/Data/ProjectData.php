@@ -62,7 +62,7 @@ class ProjectData extends PostData
 	{
 		$post = get_post_parent($this->id);
 
-		return $post instanceof \WP_Post ? ProjectData::fromPost($post) : null
+		return $post instanceof \WP_Post ? ProjectData::fromPost($post) : null;
 	}
 
 	public function children(): Collection
