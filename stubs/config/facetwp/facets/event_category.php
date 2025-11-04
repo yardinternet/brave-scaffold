@@ -11,7 +11,7 @@ return [
 	'modifier_type' => 'off',
 	'modifer_values' => '',
 	'hierarchical' => 'yes',
-	'show_expanded'	=> 'no',
+	'show_expanded' => 'no',
 	'preserve_ghosts' => 'yes',
 	'operator' => 'and',
 	'orderby' => 'raw_value',
