@@ -92,7 +92,6 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 		], 'project');
 
 		$this->publishes([
-			__DIR__ . '/../stubs/Data/EventData.php' => app_path('Data/EventData.php'),
 			__DIR__ . '/../stubs/View/Components/Card/YardEvent.php' => app_path('View/Components/Card/YardEvent.php'),
 			__DIR__ . '/../stubs/config/facetwp/facets/event_category.php' => config_path('facetwp/facets/event_category.php'),
 			__DIR__ . '/../stubs/config/facetwp/facets/event_date_range.php' => config_path('facetwp/facets/event_date_range.php'),
