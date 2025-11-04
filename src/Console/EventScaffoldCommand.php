@@ -13,7 +13,7 @@ class EventScaffoldCommand extends Command
 	 *
 	 * @var string
 	 */
-	protected $signature = 'scaffold:wp-event';
+	protected $signature = 'scaffold:wp-events';
 
 	/**
 	 * The console command description.
