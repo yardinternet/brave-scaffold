@@ -1,0 +1,19 @@
+.wp-block-yard-wp-events-add-event-to-calendar-title {
+	@apply mb-3 font-bold;
+}
+
+.wp-block-yard-wp-events-add-event-to-calendar-list {
+	@apply flex list-none flex-wrap gap-3 pl-0;
+}
+
+.wp-block-yard-wp-events-add-event-to-calendar-link {
+	@apply flex p-1;
+
+	.wp-block-yard-wp-events-add-event-to-calendar-link-img {
+		@apply size-8;
+	}
+
+	.wp-block-yard-wp-events-add-event-to-calendar-link-text {
+		@apply sr-only;
+	}
+}

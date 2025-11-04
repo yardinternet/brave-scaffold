@@ -7,6 +7,7 @@ namespace Yard\Brave\Scaffold;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Yard\Brave\Scaffold\Console\ChildThemeScaffoldCommand;
+use Yard\Brave\Scaffold\Console\EventScaffoldCommand;
 use Yard\Brave\Scaffold\Console\KnowledgebaseScaffoldCommand;
 use Yard\Brave\Scaffold\Console\NewsScaffoldCommand;
 use Yard\Brave\Scaffold\Console\PersonScaffoldCommand;
@@ -25,6 +26,7 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 					NewsScaffoldCommand::class,
 					PersonScaffoldCommand::class,
 					ProjectScaffoldCommand::class,
+					EventScaffoldCommand::class,
 				]
 			);
 	}
@@ -88,5 +90,22 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/templates/project.blade.php' => resource_path('views/blocks/FacetWP/templates/project.blade.php'),
 			__DIR__ . '/../stubs/resources/views/partials/content-single-project.blade.php' => resource_path('views/partials/content-single-project.blade.php'),
 		], 'project');
+
+		$this->publishes([
+			__DIR__ . '/../stubs/Data/EventData.php' => app_path('Data/EventData.php'),
+			__DIR__ . '/../stubs/View/Components/Card/YardEvent.php' => app_path('View/Components/Card/YardEvent.php'),
+			__DIR__ . '/../stubs/config/facetwp/facets/event_category.php' => config_path('facetwp/facets/event_category.php'),
+			__DIR__ . '/../stubs/config/facetwp/facets/event_date_range.php' => config_path('facetwp/facets/event_date_range.php'),
+			__DIR__ . '/../stubs/config/facetwp/facets/event_distance.php' => config_path('facetwp/facets/event_distance.php'),
+			__DIR__ . '/../stubs/config/facetwp/facets/event_result_count.php' => config_path('facetwp/facets/event_result_count.php'),
+			__DIR__ . '/../stubs/config/facetwp/templates/events.php' => config_path('facetwp/templates/events.php'),
+			__DIR__ . '/../stubs/resources/styles/blocks/add-event-to-calendar/shared.css' => resource_path('styles/blocks/add-event-to-calendar/shared.css'),
+			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/loops/events-loop.blade.php' => resource_path('views/blocks/FacetWP/loops/events-loop.blade.php'),
+			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/templates/events.blade.php' => resource_path('views/blocks/FacetWP/templates/events.blade.php'),
+			__DIR__ . '/../stubs/resources/views/components/meta/event.blade.php' => resource_path('views/components/meta/event.blade.php'),
+			__DIR__ . '/../stubs/resources/views/vendor/wp-events/blocks/event-info.blade.php' => resource_path('views/vendor/wp-events/blocks/event-info.blade.php'),
+			__DIR__ . '/../stubs/resources/views/partials/content-single-event-schedule.blade.php' => resource_path('views/partials/content-single-event-schedule.blade.php'),
+			__DIR__ . '/../stubs/resources/views/partials/content-single-event.blade.php' => resource_path('views/partials/content-single-event.blade.php'),
+		], 'wp-events');
 	}
 }
