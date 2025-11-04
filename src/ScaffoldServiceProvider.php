@@ -104,8 +104,8 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/templates/events.blade.php' => resource_path('views/blocks/FacetWP/templates/events.blade.php'),
 			__DIR__ . '/../stubs/resources/views/components/meta/event.blade.php' => resource_path('views/components/meta/event.blade.php'),
 			__DIR__ . '/../stubs/resources/views/vendor/wp-events/blocks/event-info.blade.php' => resource_path('views/vendor/wp-events/blocks/event-info.blade.php'),
-			__DIR__ . '/../stubs/resources/views/partials/content-single-event-schedule.blade.php' => resource_path('views/partials/content-single-event-schedule.blade.php'),
-			__DIR__ . '/../stubs/resources/views/partials/content-single-event.blade.php' => resource_path('views/partials/content-single-event.blade.php'),
+			__DIR__ . '/../stubs/resources/views/partials/content-single-yard-event-schedule.blade.php' => resource_path('views/partials/content-single-yard-event-schedule.blade.php'),
+			__DIR__ . '/../stubs/resources/views/partials/content-single-yard-event.blade.php' => resource_path('views/partials/content-single-yard-event.blade.php'),
 		], 'wp-events');
 	}
 }
