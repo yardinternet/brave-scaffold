@@ -24,6 +24,13 @@ return [
 			],
 		],
 		'filters' => [
+			[
+				'source' => 'meta',
+				'key' => 'cf/event_start_date',
+				'type' => 'DATE',
+				'compare' => '>=',
+				'value' => date('Y-m-d'),
+			],
 		],
 	],
 	'modes' => [

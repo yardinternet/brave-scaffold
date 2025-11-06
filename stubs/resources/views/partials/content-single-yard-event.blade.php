@@ -1,6 +1,9 @@
 <x-brave-back-button text="Terug naar overzicht" :link="home_url('/evenementen')" />
 
 <h1>{!! $postData->parent()->title !!}</h1>
+@if(today() > $postData->startDate)
+	<h2 class="text-red-700">Dit evenement is reeds afgelopen</h2>
+@endif
 
 {!! $postData->parent()->content() !!}
 
