@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 return [
 	'name' => 'person',
-	'label' => 'Personen',
+	'label' => __('Personen', 'sage'),
 	'query' => '',
 	'template' => "<?php echo view('blocks.FacetWP.loops.person-loop'); ?>",
 	'layout' => [],
 	'query_obj' => [
 		'post_type' => [
 			[
-				'label' => 'Personen',
+				'label' => __('Personen', 'sage'),
 				'value' => 'person',
 			],
 		],

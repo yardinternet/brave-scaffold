@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
 	'name' => 'project',
-	'label' => 'Projecten',
+	'label' => __('Projecten', 'sage'),
 	'query' => "<?php
 				return [
 				'post_type' => [

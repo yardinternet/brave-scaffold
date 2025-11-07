@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
 	'name' => 'project_status',
-	'label' => 'Status',
+	'label' => __('Status', 'sage'),
 	'type' => 'checkboxes',
 	'source' => 'tax/project_status',
 	'parent_term' => '',

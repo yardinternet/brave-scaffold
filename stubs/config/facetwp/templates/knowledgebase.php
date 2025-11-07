@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 return [
 	'name' => 'knowledgebase',
-	'label' => 'Kennisbank',
+	'label' => __('Kennisbank', 'sage'),
 	'query' => '',
 	'template' => "<?php echo view('blocks.FacetWP.loops.knowledgebase-loop'); ?>",
 	'layout' => [],
 	'query_obj' => [
 		'post_type' => [
 			[
-				'label' => 'Kennisbank artikelen',
+				'label' => __('Kennisbank artikelen', 'sage'),
 				'value' => 'knowledgebase',
 			],
 		],

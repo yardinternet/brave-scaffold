@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
 	'name' => 'project_region',
-	'label' => 'Regio',
+	'label' => __('Regio', 'sage'),
 	'type' => 'checkboxes',
 	'source' => 'tax/project_region',
 	'parent_term' => '',
