@@ -12,7 +12,7 @@
 <x-social.share />
 
 @if ($postData->related()->isNotEmpty())
-	<h2 class="alignwide !mt-12 mb-0 xl:!mt-16">Het laatste nieuws</h2>
+	<h2 class="alignwide !mt-12 mb-0 xl:!mt-16">{{ __('Het laatste nieuws', 'sage') }}</h2>
 	<div class="@container alignwide">
 		<div class="@2xl:grid-cols-3 @2xl:mt-8 mb-2 mt-4 grid gap-4 lg:gap-6">
 			@foreach ($postData->related() as $related)

@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 return [
 	'name' => 'news',
-	'label' => 'Nieuws',
+	'label' => __('Nieuws', 'sage'),
 	'query' => '',
 	'template' => "<?php echo view('blocks.FacetWP.loops.news-loop'); ?>",
 	'layout' => [],
 	'query_obj' => [
 		'post_type' => [
 			[
-				'label' => 'Nieuwsberichten',
+				'label' => __('Nieuwsberichten', 'sage'),
 				'value' => 'news',
 			],
 		],
