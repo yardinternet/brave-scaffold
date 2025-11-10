@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return [
 	'name' => 'event_categorie',
-	'label' => 'Categorie',
+	'label' => __('Categorie', 'sage'),
 	'type' => 'checkboxes',
 	'source' => 'tax/event_category',
 	'parent_term' => '',
