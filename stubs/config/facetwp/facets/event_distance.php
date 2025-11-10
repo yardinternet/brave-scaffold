@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 return 		[
 	'name' => 'event_distance',
-	'label' => 'Locatie',
+	'label' => __('Locatie', 'sage'),
 	'type' => 'proximity',
 	'source' => 'acf/venue_address',
 	'unit' => 'km',

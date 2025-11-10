@@ -4,7 +4,7 @@
 
 @if (!($eventData instanceof EventData))
 	<x-alert type="warning" class="col-span-12">
-		Momenteel kan er (nog) geen event informatie getoond worden.
+		{{ __('Momenteel kan er (nog) geen event informatie getoond worden.','sage') }}
 	</x-alert>
 @else
 	<ul class="flex list-none flex-col flex-wrap gap-x-8 gap-y-2 !pl-0">
@@ -16,7 +16,7 @@
 					{!! $eventData->formattedDateTime() !!}
 
 					@if (!empty($eventData->parent()->dateDataCollection) || !empty($eventData->parent()->recurrenceRule))
-						<a href="{{ $eventData->parent()->url() }}">Bekijk alle data</a>
+						<a href="{{ $eventData->parent()->url() }}">{{ __('Bekijk alle data', 'sage') }}</a>
 					@endif
 				</span>
 			</li>
@@ -33,7 +33,7 @@
 					@if ($eventData->venue()?->location?->googleMapsLink())
 						<span>
 							<a href="{{ $eventData->venue()?->location?->googleMapsLink() }}" target="_blank">
-								Bekijk op Google Maps
+								{{ __('Bekijk op Google Maps', 'sage') }}
 							</a>
 						</span>
 					@endif

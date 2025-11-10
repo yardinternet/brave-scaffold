@@ -7,7 +7,7 @@ return [
 	'label' => 'Resultaten evenementen',
 	'type' => 'pager',
 	'pager_type' => 'counts',
-	'count_text_plural' => 'Er zijn <span>[total]</span> evenementen gevonden.',
-	'count_text_singular' => 'Er is <span>1</span> evenement gevonden.',
-	'count_text_none' => 'Er zijn geen evenementen gevonden.',
+	'count_text_plural' => __('Er zijn <span>[total]</span> evenementen gevonden.', 'sage'),
+	'count_text_singular' => __('Er is <span>1</span> evenement gevonden.', 'sage'),
+	'count_text_none' => __('Er zijn geen evenementen gevonden.', 'sage'),
 ];

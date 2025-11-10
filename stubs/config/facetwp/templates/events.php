@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 return [
 	'name' => 'events',
-	'label' => 'Evenementen',
+	'label' => __('Evenementen', 'sage'),
 	'query' => '',
 	'template' => "<?php echo view('blocks.FacetWP.loops.events-loop'); ?>",
 	'layout' => [],
 	'query_obj' => [
 		'post_type' => [
 			[
-				'label' => 'Event',
+				'label' => __('Event', 'sage'),
 				'value' => 'yard-event',
 			],
 		],
