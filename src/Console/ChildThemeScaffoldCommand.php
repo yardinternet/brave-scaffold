@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace Yard\Brave\Scaffold\Console;
 
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Console\PromptsForMissingInput;
 use Illuminate\Support\Facades\File;
 use Webmozart\Assert\Assert;
 
-class ChildThemeScaffoldCommand extends Command
+class ChildThemeScaffoldCommand extends Command implements PromptsForMissingInput
 {
 	/**
 	 * The name and signature of the console command.
