@@ -26,5 +26,5 @@ return [
 	'preset_this_month_enabled' => 'no',
 	'preset_this_month_label' => __('Deze maand', 'sage'),
 	'preset_next_month_enabled' => 'no',
-	'preset_next_month_label' => __('Volgende maand', 'sage')
+	'preset_next_month_label' => __('Volgende maand', 'sage'),
 ];
