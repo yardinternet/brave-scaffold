@@ -2,7 +2,7 @@
 
 <h1>{!! $postData->parent()->title !!}</h1>
 @if(today() > $postData->startDate)
-	<h2 class="text-red-700">{{ __('Dit evenement is reeds afgelopen', 'sage') }}</h2>
+	<p class="text-red-700">{{ __('Dit evenement is reeds afgelopen', 'sage') }}</p>
 @endif
 
 {!! $postData->parent()->content() !!}

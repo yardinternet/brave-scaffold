@@ -29,7 +29,7 @@
 					{!! $eventData->isOnlineLabel() !!}
 				@elseif($eventData->venue())
 					<span>{!! $eventData->venue()?->title() !!}</span>
-					<span>{!! $eventData->venue()?->location?->formattedAddress() ?? '' !!}</span>
+					<span>{!! $eventData->venue()?->location?->formattedAddress()!!}</span>
 					@if ($eventData->venue()?->location?->googleMapsLink())
 						<span>
 							<a href="{{ $eventData->venue()?->location?->googleMapsLink() }}" target="_blank">
