@@ -1,8 +1,15 @@
 <x-brave-back-button text="{{__('Terug naar overzicht', 'sage') }}" :link="home_url('/evenementen')" />
 
 <h1>{!! $postData->parent()->title !!}</h1>
-@if(today() > $postData->startDate)
-	<p class="text-red-700">{{ __('Dit evenement is reeds afgelopen', 'sage') }}</p>
+@if ($postData->hasStarted())
+	<x-alert type="warning">
+		Deze activiteit is al begonnen.
+	</x-alert>
+@endif
+@if ($postData->hasEnded())
+	<x-alert type="warning">
+		Deze activiteit heeft al plaatsgevonden.
+	</x-alert>
 @endif
 
 {!! $postData->parent()->content() !!}
