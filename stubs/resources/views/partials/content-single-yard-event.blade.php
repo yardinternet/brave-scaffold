@@ -1,6 +1,6 @@
 <x-brave-back-button text="{{__('Terug naar overzicht', 'sage') }}" :link="home_url('/evenementen')" />
 
-<h1>{!! $postData->parent()->title !!}</h1>
+<h1>{!! $postData->schedule()->title !!}</h1>
 @if ($postData->hasStarted())
 	<x-alert type="warning">
 		Deze activiteit is al begonnen.
@@ -12,7 +12,7 @@
 	</x-alert>
 @endif
 
-{!! $postData->parent()->content() !!}
+{!! $postData->schedule()->content() !!}
 
 @if ($postData->related()->isNotEmpty())
 	<h2 class="alignwide !mt-12 mb-0 xl:!mt-16">{{ __('Bekijk ook deze evenementen','sage') }}</h2>
