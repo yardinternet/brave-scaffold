@@ -15,8 +15,8 @@
 				<span class="flex flex-col">
 					{!! $eventData->formattedDateTime() !!}
 
-					@if (!empty($eventData->parent()->dateDataCollection) || !empty($eventData->parent()->recurrenceRule))
-						<a href="{{ $eventData->parent()->url() }}">{{ __('Bekijk alle data', 'sage') }}</a>
+					@if (!empty($eventData->schedule()->dateDataCollection) || !empty($eventData->schedule()->recurrenceRule))
+						<a href="{{ $eventData->schedule()->url() }}">{{ __('Bekijk alle data', 'sage') }}</a>
 					@endif
 				</span>
 			</li>
