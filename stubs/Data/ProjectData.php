@@ -33,47 +33,6 @@ class ProjectData extends PostData
 	/** @var Collection<int, TermData> */
 	public Collection $statuses;
 
-	public function isParent(): bool
-	{
-		if ($this->isInformationPost) {
-			return false;
-		}
-
-		$children = get_children([
-			'post_parent' => $this->id,
-			'post_type' => $this->postType,
-		]);
-
-		return ! empty($children) && ! has_post_parent($this->id);
-	}
-
-	public function isChild(): bool
-	{
-		$parent = get_post_parent($this->id);
-
-		if (! $parent) {
-			return false;
-		}
-
-		return $parent instanceof \WP_Post;
-	}
-
-	public function children(): Collection
-	{
-		$children = get_children([
-			'post_parent' => $this->id,
-			'post_type' => $this->postType,
-			'orderby' => 'menu_order',
-			'order' => 'ASC',
-		]);
-
-		if (empty($children)) {
-			return collect();
-		}
-
-		return ProjectData::collect($children, Collection::class);
-	}
-
 	public function related(): Collection
 	{
 		return ProjectData::collect($this->related, Collection::class);
