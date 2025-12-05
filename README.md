@@ -61,3 +61,7 @@ To create a child theme you can run the following command. This will create a ch
 
 More information about child themes can be found in [Brave](https://github.com/yardinternet/brave)
 and [Sage Child Theme Support](https://github.com/yardinternet/sage-child-theme-support)
+
+## About us
+
+[![banner](https://raw.githubusercontent.com/yardinternet/.github/refs/heads/main/profile/assets/small-banner-github.svg)](https://www.yard.nl/werken-bij/)
