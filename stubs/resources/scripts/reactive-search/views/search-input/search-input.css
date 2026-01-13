@@ -1,0 +1,64 @@
+@reference '@sage/styles/base/config.css';
+@reference '@sage/styles/base/utilities.css';
+
+:root {
+	--yrs-search-input-height: 60px;
+}
+
+.wp-block-yard-yrs-search-input {
+	@apply min-h-(--yrs-search-input-height) w-full;
+}
+
+.yrs-search-input-container {
+	@apply mx-auto w-full shadow;
+
+	&:has( .yrs-datasearch-autosuggest-input:focus ),
+	&:has( .yrs-datasearch-autosuggest-input:not( :placeholder-shown ) ) {
+		.yrs-search-input-label {
+			@apply -translate-y-4 text-xs leading-none;
+		}
+	}
+
+	.yrs-search-input-label {
+		@apply left-2 bg-white px-2 py-1;
+	}
+
+	.yrs-datasearch-autosuggest {
+		> div {
+			@apply m-0;
+		}
+
+		.input-group {
+			@apply shadow-none;
+
+			.yrs-datasearch-autosuggest-input {
+				@apply ring-primary focus:border-primary h-(--yrs-search-input-height) rounded-none py-3! pr-16! pl-4! shadow-none;
+
+				+ div > div {
+					@apply p-0;
+
+					> div {
+						@apply max-w-full;
+					}
+				}
+			}
+
+			.yrs-search-bar-btn-submit {
+				@apply bg-primary absolute top-0 right-0 h-full w-18 text-2xl text-white transition;
+
+				&::before {
+					@apply fontawesome;
+					--fa-icon: '\f002';
+				}
+
+				@variant hocus {
+					@apply bg-primary-800;
+				}
+			}
+
+			.yrs-search-bar-btn-submit-text {
+				@apply sr-only;
+			}
+		}
+	}
+}
