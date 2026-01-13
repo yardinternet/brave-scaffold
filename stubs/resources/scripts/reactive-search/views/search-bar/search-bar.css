@@ -1,0 +1,68 @@
+@reference '@sage/styles/base/config.css';
+@reference '@sage/styles/base/utilities.css';
+
+.yrs-search-bar-container {
+	.yrs-search-bar-btn-open {
+		@apply lg:text-primary flex h-11.5 flex-col items-center justify-between rounded bg-white text-black transition-all lg:size-14 lg:min-w-14 lg:justify-center;
+
+		&::before {
+			@apply fontawesome pointer-events-none text-4xl leading-none transition md:text-2xl;
+			--fa-icon: '\f002';
+			--fa-weight: 400;
+		}
+
+		@variant hocus {
+			@apply text-primary;
+		}
+
+		.yrs-search-bar-btn-open-text {
+			@apply text-xs leading-none lg:sr-only;
+		}
+	}
+
+	.yrs-search-bar-inner {
+		@apply top-(--wp-admin-bar-height) h-(--combined-bar-height)! gap-x-2 sm:gap-x-4;
+	}
+
+	.yrs-datasearch-autosuggest {
+		@apply w-full max-w-xl;
+
+		> div {
+			@apply m-0;
+		}
+
+		.yrs-datasearch-autosuggest-input {
+			@apply border-primary ring-primary rounded-none border-0 border-b-2 bg-white shadow-none! md:py-4 md:pl-3 md:text-lg;
+		}
+
+		.input-group {
+			@apply shadow-none;
+		}
+	}
+
+	.yrs-search-bar-btn-submit,
+	.yrs-search-bar-btn-close {
+		@apply size-8 min-w-8 sm:text-lg xl:text-xl;
+
+		&::before {
+			@apply fontawesome transition;
+			--fa-icon: '\f002';
+		}
+
+		@variant hocus {
+			&::before {
+				@apply text-primary;
+			}
+		}
+	}
+
+	.yrs-search-bar-btn-submit-text,
+	.yrs-search-bar-btn-close-text {
+		@apply sr-only;
+	}
+
+	.yrs-search-bar-btn-close::before {
+		@apply fontawesome;
+		--fa-icon: '\f00d';
+	}
+}

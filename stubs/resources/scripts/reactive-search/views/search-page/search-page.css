@@ -1,0 +1,206 @@
+@reference '@sage/styles/base/config.css';
+@reference '@sage/styles/base/utilities.css';
+
+:root {
+	--yrs-datasearch-input-border-color: var( --color-gray-400 );
+	--yrs-datasearch-input-border-color-focus: var( --color-primary );
+	--yrs-datasearch-input-btn-color: var( --color-black );
+	--yrs-datasearch-input-btn-color-hover: var( --color-primary );
+	--yrs-datasearch-input-btn-bg: transparent;
+	--yrs-datasearch-input-btn-bg-hover: transparent;
+}
+
+.yrs-wrapper {
+	.yrs-heading {
+		@apply mb-8 lg:mb-12;
+	}
+
+	.yrs-row {
+		@apply gap-4 lg:grid-cols-12 lg:gap-8 xl:gap-10;
+
+		.yrs-column-1 {
+			@apply lg:col-span-4 xl:col-span-3;
+		}
+
+		.yrs-column-2 {
+			@apply lg:col-span-8 xl:col-span-9;
+		}
+	}
+
+	.yrs-datasearch-label,
+	.yrs-multidatalist-title {
+		@apply mb-2 block text-xl font-bold;
+	}
+
+	.yrs-datasearch-container {
+		@apply mb-8;
+	}
+
+	.yrs-datasearch {
+		> div {
+			@apply m-0;
+		}
+
+		.input-group {
+			@apply shadow-none;
+		}
+	}
+
+	.yrs-datasearch-input {
+		@apply rounded-theme h-13 border-x-0 border-t-0 border-b-2 border-(--yrs-datasearch-input-border-color) bg-white py-3 pr-10 text-base shadow-sm;
+
+		&:focus {
+			@apply border-(--yrs-datasearch-input-border-color-focus);
+		}
+
+		+ div > div {
+			@apply min-w-11;
+
+			&:empty {
+				@apply hidden;
+			}
+		}
+	}
+
+	.yrs-datasearch-input-btn {
+		@apply h-full bg-(--yrs-datasearch-input-btn-bg) text-(--yrs-datasearch-input-btn-color);
+
+		&::before {
+			@apply fontawesome flex h-full w-12 items-center justify-center bg-transparent;
+			--fa-icon: '\f002';
+		}
+
+		@variant hocus {
+			&::before {
+				@apply bg-(--yrs-datasearch-input-btn-bg-hover) text-(--yrs-datasearch-input-btn-color-hover);
+			}
+		}
+
+		.yrs-datasearch-input-btn-text {
+			@apply sr-only;
+		}
+	}
+
+	.yrs-button-filters {
+		@apply is-button w-full lg:hidden;
+
+		&::before {
+			@apply fontawesome mr-2;
+			--fa-icon: '\f1de';
+		}
+	}
+
+	.yrs-filters-inner {
+		@apply mt-3;
+	}
+
+	.yrs-multidatalist-label {
+		@apply mt-0 mb-2 text-base!;
+
+		&::before {
+			@apply mr-3;
+		}
+
+		> span {
+			@apply flex items-center;
+		}
+
+		.yrs-multidatalist-count {
+			@apply text-sm;
+		}
+	}
+
+	.yrs-results {
+		@apply @container;
+	}
+
+	.yrs-results-info {
+		@apply text-primary mb-4 justify-end text-sm;
+	}
+
+	.yrs-results-list {
+		@apply grid gap-4 @xl:gap-6;
+	}
+
+	.yrs-card {
+		@apply rounded-theme relative bg-white shadow transition-all;
+
+		&:focus-within,
+		&:hover {
+			.yrs-card-body {
+				@apply border-primary;
+			}
+		}
+
+		.yrs-card-body {
+			@apply flex flex-col border-b-4 border-transparent p-(--card-padding) transition-all xl:p-8;
+		}
+
+		.yrs-card-title-link {
+			@apply a-linkable-area text-inherit! no-underline! focus:underline!;
+		}
+
+		.yrs-card-excerpt {
+			@apply mb-2 leading-snug sm:leading-relaxed;
+		}
+
+		.yrs-card-label {
+			@apply mt-3 w-fit rounded bg-gray-100 px-2 py-1 text-xs leading-normal! sm:text-sm;
+		}
+
+		.yrs-card-score {
+			@apply absolute right-6 bottom-6 hidden text-xs text-gray-700;
+
+			&:is( .logged-in .yrs-card-score ) {
+				@apply block;
+			}
+		}
+	}
+
+	.yrs-pagination-list {
+		@apply justify-end gap-x-2 gap-y-4;
+	}
+
+	.yrs-pagination-button {
+		@apply size-10 min-h-10 min-w-10 p-2 text-black no-underline transition-all;
+
+		&:not( .is-active ) {
+			@apply hover:bg-primary-100;
+		}
+
+		&.is-active {
+			@apply font-bold;
+		}
+	}
+
+	.yrs-pagination-button-prev {
+		@apply hover:bg-primary! border-primary text-primary mr-4 size-10 border text-[0px];
+
+		&::before {
+			@apply fontawesome text-base text-inherit;
+			--fa-icon: '\f053';
+		}
+
+		@variant hocus {
+			@apply bg-primary text-white;
+		}
+	}
+
+	.yrs-pagination-button-next {
+		@apply bg-primary ml-4 size-10 text-[0px] text-white;
+
+		&::before {
+			@apply fontawesome text-base;
+			--fa-icon: '\f054';
+		}
+
+		@variant hocus {
+			@apply bg-primary-700!;
+			filter: brightness( 1 );
+		}
+	}
+
+	.yrs-pagination-info {
+		@apply text-right text-sm;
+	}
+}

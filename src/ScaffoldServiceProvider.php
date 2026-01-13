@@ -7,6 +7,7 @@ namespace Yard\Brave\Scaffold;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Yard\Brave\Scaffold\Console\ChildThemeScaffoldCommand;
+use Yard\Brave\Scaffold\Console\ElasticsearchScaffoldCommand;
 use Yard\Brave\Scaffold\Console\EventScaffoldCommand;
 use Yard\Brave\Scaffold\Console\KnowledgebaseScaffoldCommand;
 use Yard\Brave\Scaffold\Console\NewsScaffoldCommand;
@@ -22,6 +23,7 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			->hasCommands(
 				[
 					ChildThemeScaffoldCommand::class,
+					ElasticsearchScaffoldCommand::class,
 					KnowledgebaseScaffoldCommand::class,
 					NewsScaffoldCommand::class,
 					PersonScaffoldCommand::class,
@@ -33,6 +35,21 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 
 	public function bootingPackage(): void
 	{
+		$this->publishes([
+			__DIR__ . '/../stubs/app/Hooks/Elasticsearch.php' => app_path('Hooks/Elasticsearch.php'),
+			__DIR__ . '/../stubs/resources/scripts/reactive-search/reactive-search.jsx' => resource_path('scripts/reactive-search/reactive-search.jsx'),
+			__DIR__ . '/../stubs/resources/scripts/reactive-search/config/theme.js' => resource_path('scripts/reactive-search/config/theme.js'),
+			__DIR__ . '/../stubs/resources/scripts/reactive-search/styles/autosuggest.css' => resource_path('scripts/reactive-search/styles/autosuggest.css'),
+			__DIR__ . '/../stubs/resources/scripts/reactive-search/views/search-bar/search-bar.css' => resource_path('scripts/reactive-search/views/search-bar/search-bar.css'),
+			__DIR__ . '/../stubs/resources/scripts/reactive-search/views/search-bar/SearchBar.jsx' => resource_path('scripts/reactive-search/views/search-bar/SearchBar.jsx'),
+			__DIR__ . '/../stubs/resources/scripts/reactive-search/views/search-input/search-input.css' => resource_path('scripts/reactive-search/views/search-input/search-input.css'),
+			__DIR__ . '/../stubs/resources/scripts/reactive-search/views/search-input/SearchInput.jsx' => resource_path('scripts/reactive-search/views/search-input/SearchInput.jsx'),
+			__DIR__ . '/../stubs/resources/scripts/reactive-search/views/search-page/search-page.css' => resource_path('scripts/reactive-search/views/search-page/search-page.css'),
+			__DIR__ . '/../stubs/resources/scripts/reactive-search/views/search-page/SearchPage.jsx' => resource_path('scripts/reactive-search/views/search-page/SearchPage.jsx'),
+			__DIR__ . '/../stubs/resources/views/partials/header/reactive-search-bar.blade.php' => resource_path('views/partials/header/reactive-search-bar.blade.php'),
+			__DIR__ . '/../stubs/resources/views/reactive-search-page.blade.php' => resource_path('views/reactive-search-page.blade.php'),
+		], 'elasticsearch');
+
 		$this->publishes([
 			__DIR__ . '/../stubs/View/Components/Card/News.php' => app_path('View/Components/Card/News.php'),
 			__DIR__ . '/../stubs/Data/NewsData.php' => app_path('Data/NewsData.php'),

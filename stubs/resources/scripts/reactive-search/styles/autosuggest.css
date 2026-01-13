@@ -1,0 +1,56 @@
+@reference '@sage/styles/base/config.css';
+@reference '@sage/styles/base/utilities.css';
+
+.yrs-wrapper {
+	.yrs-autosuggest {
+		@apply z-100 shadow;
+	}
+
+	.yrs-autosuggest-item {
+		@apply border-gray-100;
+
+		&:last-child {
+			@apply font-bold;
+
+			.yrs-autosuggest-link {
+				@apply gap-x-4;
+			}
+		}
+
+		&.is-selected {
+			.yrs-autosuggest-link {
+				@apply text-primary bg-white;
+				animation: focus 0.1s linear both;
+				outline-color: -webkit-focus-ring-color;
+				outline-style: auto;
+			}
+		}
+	}
+
+	.yrs-autosuggest-link {
+		@apply py-2 no-underline;
+
+		&:hover,
+		&:focus {
+			@apply text-black;
+		}
+
+		@variant hocus {
+			@apply text-primary;
+		}
+
+		&:focus {
+			.trim {
+				@apply underline;
+			}
+		}
+
+		i {
+			@apply text-inherit!;
+		}
+	}
+
+	.yrs-autosuggest-link-label {
+		@apply text-xs whitespace-nowrap sm:pl-4;
+	}
+}
