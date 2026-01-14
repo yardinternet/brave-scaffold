@@ -86,6 +86,7 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/config/facetwp/templates/person.php' => config_path('facetwp/templates/person.php'),
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/loops/person-loop.blade.php' => resource_path('views/blocks/FacetWP/loops/person-loop.blade.php'),
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/templates/person.blade.php' => resource_path('views/blocks/FacetWP/templates/person.blade.php'),
+			__DIR__ . '/../stubs/resources/views/components/meta/person.blade.php' => resource_path('views/components/meta/person.blade.php'),
 			__DIR__ . '/../stubs/resources/views/partials/content-single-person.blade.php' => resource_path('views/partials/content-single-person.blade.php'),
 			__DIR__ . '/../stubs/acf-json/group_66e02ff47667d.json' => base_path('acf-json/group_66e02ff47667d.json'),
 		], 'person');
