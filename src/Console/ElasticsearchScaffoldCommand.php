@@ -32,6 +32,6 @@ class ElasticsearchScaffoldCommand extends Command
 			'--tag' => 'elasticsearch',
 		]);
 		$this->info('You need to do some additional steps after running this scaffold. Please read the docs here:');
-		$this->line('https://github.com/yardinternet/brave-scaffold/blob/feat/elasticsearch/docs/elasticsearch.md');
+		$this->line('https://github.com/yardinternet/brave-scaffold/blob/main/docs/elasticsearch.md');
 	}
 }
