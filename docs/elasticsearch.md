@@ -13,7 +13,7 @@ After scaffolding, follow these steps:
 Install the Yard Elasticsearch plugin and the Reactive Search npm package:
 
 ```shell
-composer require plugin/yard-elasticsearch && pnpm install @yardinternet/reactive-search
+composer require plugin/yard-elasticsearch wpackagist-plugin/elasticpress  && pnpm install @yardinternet/reactive-search
 ```
 
 ## 2. Add the Elasticsearch `.env` variables
@@ -52,14 +52,12 @@ return [
 
 Replace the current `@include('partials.header.search-bar')` of the search-bar with the following in the  `header.blade.php`:
 
-```diff
-- @include('partials.header.search-bar')
-
-+ @if (is_plugin_active('yard-elasticsearch/yard-elasticsearch.php'))
-+     @include('partials.header.reactive-search-bar')
-+ @else
-+     @include('partials.header.search-bar')
-+ @endif
+```blade
+@if (is_plugin_active('yard-elasticsearch/yard-elasticsearch.php'))
+    @include('partials.header.reactive-search-bar')
+@else
+    @include('partials.header.search-bar')
+@endif
 ```
 
 ## 6. Activate the Plugin & Configure Settings
