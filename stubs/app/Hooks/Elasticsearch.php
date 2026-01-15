@@ -10,7 +10,7 @@ use Yard\Hook\Action;
 use Yard\Hook\Filter;
 
 #[Plugin('yard-elasticsearch/yard-elasticsearch.php')]
-class Elasticsearch
+class Elasticsearch extends \Yard\Brave\Hooks\Elasticsearch
 {
 	#[Action('wp_head')]
 	public function enqueueAssets(): void
