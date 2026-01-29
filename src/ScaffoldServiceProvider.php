@@ -60,7 +60,7 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/config/facetwp/templates/news.php' => config_path('facetwp/templates/news.php'),
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/loops/news-loop.blade.php' => resource_path('views/blocks/FacetWP/loops/news-loop.blade.php'),
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/templates/news.blade.php' => resource_path('views/blocks/FacetWP/templates/news.blade.php'),
-			__DIR__ . '/../stubs/resources/views/partials/content-single-news.blade.php' => resource_path('views/partials/content-single-news.blade.php'),
+			__DIR__ . '/../stubs/resources/views/single-news.blade.php' => resource_path('views/single-news.blade.php'),
 		], 'news');
 
 		$this->publishes([
@@ -73,7 +73,7 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/config/facetwp/templates/knowledgebase.php' => config_path('facetwp/templates/knowledgebase.php'),
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/loops/knowledgebase-loop.blade.php' => resource_path('views/blocks/FacetWP/loops/knowledgebase-loop.blade.php'),
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/templates/knowledgebase.blade.php' => resource_path('views/blocks/FacetWP/templates/knowledgebase.blade.php'),
-			__DIR__ . '/../stubs/resources/views/partials/content-single-knowledgebase.blade.php' => resource_path('views/partials/content-single-knowledgebase.blade.php'),
+			__DIR__ . '/../stubs/resources/views/single-knowledgebase.blade.php' => resource_path('views/single-knowledgebase.blade.php'),
 			__DIR__ . '/../stubs/acf-json/group_66e0254a243fd.json' => base_path('acf-json/group_66e0254a243fd.json'),
 		], 'knowledgebase');
 
@@ -87,7 +87,7 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/loops/person-loop.blade.php' => resource_path('views/blocks/FacetWP/loops/person-loop.blade.php'),
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/templates/person.blade.php' => resource_path('views/blocks/FacetWP/templates/person.blade.php'),
 			__DIR__ . '/../stubs/resources/views/components/meta/person.blade.php' => resource_path('views/components/meta/person.blade.php'),
-			__DIR__ . '/../stubs/resources/views/partials/content-single-person.blade.php' => resource_path('views/partials/content-single-person.blade.php'),
+			__DIR__ . '/../stubs/resources/views/single-person.blade.php' => resource_path('views/single-person.blade.php'),
 			__DIR__ . '/../stubs/acf-json/group_66e02ff47667d.json' => base_path('acf-json/group_66e02ff47667d.json'),
 		], 'person');
 
@@ -106,7 +106,7 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/config/poet/taxonomy/project_type.php' => config_path('poet/taxonomy/project_type.php'),
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/loops/project-loop.blade.php' => resource_path('views/blocks/FacetWP/loops/project-loop.blade.php'),
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/templates/project.blade.php' => resource_path('views/blocks/FacetWP/templates/project.blade.php'),
-			__DIR__ . '/../stubs/resources/views/partials/content-single-project.blade.php' => resource_path('views/partials/content-single-project.blade.php'),
+			__DIR__ . '/../stubs/resources/views/single-project.blade.php' => resource_path('views/single-project.blade.php'),
 		], 'project');
 
 		$this->publishes([
@@ -121,8 +121,8 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/templates/events.blade.php' => resource_path('views/blocks/FacetWP/templates/events.blade.php'),
 			__DIR__ . '/../stubs/resources/views/components/meta/event.blade.php' => resource_path('views/components/meta/event.blade.php'),
 			__DIR__ . '/../stubs/resources/views/vendor/wp-events/blocks/event-info.blade.php' => resource_path('views/vendor/wp-events/blocks/event-info.blade.php'),
-			__DIR__ . '/../stubs/resources/views/partials/content-single-yard-event-schedule.blade.php' => resource_path('views/partials/content-single-yard-event-schedule.blade.php'),
-			__DIR__ . '/../stubs/resources/views/partials/content-single-yard-event.blade.php' => resource_path('views/partials/content-single-yard-event.blade.php'),
+			__DIR__ . '/../stubs/resources/views/single-yard-event-schedule.blade.php' => resource_path('views/single-yard-event-schedule.blade.php'),
+			__DIR__ . '/../stubs/resources/views/single-yard-event.blade.php' => resource_path('views/partials/content-single-yard-event.blade.php'),
 		], 'wp-events');
 	}
 }

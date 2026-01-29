@@ -42,6 +42,8 @@ wp acorn scaffold:person
 wp acorn scaffold:project
 ```
 
+After scaffolding wp-events, [follow these manual steps to complete the setup](docs/wp-events.md).
+
 ### Child Themes
 
 To create a child theme you can run the following command. This will create a child theme directory in
