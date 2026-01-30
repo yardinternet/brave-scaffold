@@ -50,13 +50,13 @@ return [
 
 ## 5. Add the reactive search bar to the header
 
-Replace the current `@include('partials.header.search-bar')` of the search-bar with the following in the  `header.blade.php`:
+Replace the current `<x-header.search-bar />` of the search-bar with the following in the  `header.blade.php`:
 
 ```blade
 @if (is_plugin_active('yard-elasticsearch/yard-elasticsearch.php'))
-    @include('partials.header.reactive-search-bar')
+    <x-header.reactive-search-bar />
 @else
-    @include('partials.header.search-bar')
+    <x-header.search-bar />
 @endif
 ```
 

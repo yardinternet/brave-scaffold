@@ -46,7 +46,7 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/resources/scripts/reactive-search/views/search-input/SearchInput.jsx' => resource_path('scripts/reactive-search/views/search-input/SearchInput.jsx'),
 			__DIR__ . '/../stubs/resources/scripts/reactive-search/views/search-page/search-page.css' => resource_path('scripts/reactive-search/views/search-page/search-page.css'),
 			__DIR__ . '/../stubs/resources/scripts/reactive-search/views/search-page/SearchPage.jsx' => resource_path('scripts/reactive-search/views/search-page/SearchPage.jsx'),
-			__DIR__ . '/../stubs/resources/views/partials/header/reactive-search-bar.blade.php' => resource_path('views/partials/header/reactive-search-bar.blade.php'),
+			__DIR__ . '/../stubs/resources/views/components/header/reactive-search-bar.blade.php' => resource_path('views/components/header/reactive-search-bar.blade.php'),
 			__DIR__ . '/../stubs/resources/views/reactive-search-page.blade.php' => resource_path('views/reactive-search-page.blade.php'),
 		], 'elasticsearch');
 
@@ -122,7 +122,7 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/resources/views/components/meta/event.blade.php' => resource_path('views/components/meta/event.blade.php'),
 			__DIR__ . '/../stubs/resources/views/vendor/wp-events/blocks/event-info.blade.php' => resource_path('views/vendor/wp-events/blocks/event-info.blade.php'),
 			__DIR__ . '/../stubs/resources/views/single-yard-event-schedule.blade.php' => resource_path('views/single-yard-event-schedule.blade.php'),
-			__DIR__ . '/../stubs/resources/views/single-yard-event.blade.php' => resource_path('views/partials/content-single-yard-event.blade.php'),
+			__DIR__ . '/../stubs/resources/views/single-yard-event.blade.php' => resource_path('views/single-yard-event.blade.php'),
 		], 'wp-events');
 	}
 }
