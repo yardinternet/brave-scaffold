@@ -2,12 +2,26 @@
 @reference '@sage/styles/base/utilities.css';
 
 :root {
-	--yrs-datasearch-input-border-color: var( --color-gray-400 );
-	--yrs-datasearch-input-border-color-focus: var( --color-primary );
-	--yrs-datasearch-input-btn-color: var( --color-black );
-	--yrs-datasearch-input-btn-color-hover: var( --color-primary );
-	--yrs-datasearch-input-btn-bg: transparent;
-	--yrs-datasearch-input-btn-bg-hover: transparent;
+	--yrs-datasearch-input-border-color: var( --input-border-color );
+	--yrs-datasearch-input-border-color-focus: var(
+		--input-border-color-focus
+	);
+	--yrs-datasearch-input-btn-color: var(
+		--filters-sidebar-search-icon-color
+	);
+	--yrs-datasearch-input-btn-bg-color: var(
+		--filters-sidebar-search-icon-bg-color
+	);
+	--yrs-datasearch-input-btn-bg-color-hover: var(
+		--filters-sidebar-search-icon-bg-color-hover
+	);
+
+	@variant lg {
+		--yrs-column-1-bg-color: var( --filters-sidebar-bg-color );
+		--yrs-column-1-border-radius: var( --filters-sidebar-radius );
+		--yrs-column-1-padding: var( --filters-sidebar-padding );
+		--yrs-column-1-shadow: var( --filters-sidebar-shadow );
+	}
 }
 
 .yrs-wrapper {
@@ -19,7 +33,7 @@
 		@apply gap-4 lg:grid-cols-12 lg:gap-8 xl:gap-10;
 
 		.yrs-column-1 {
-			@apply lg:col-span-4 xl:col-span-3;
+			@apply rounded-(--yrs-column-1-border-radius) bg-(--yrs-column-1-bg-color) p-(--yrs-column-1-padding) shadow-(--yrs-column-1-shadow) lg:col-span-4 xl:col-span-3;
 		}
 
 		.yrs-column-2 {
@@ -63,7 +77,7 @@
 	}
 
 	.yrs-datasearch-input-btn {
-		@apply h-full bg-(--yrs-datasearch-input-btn-bg) text-(--yrs-datasearch-input-btn-color);
+		@apply h-full rounded-r-(--input-radius) bg-(--yrs-datasearch-input-btn-bg-color) text-(--yrs-datasearch-input-btn-color);
 
 		&::before {
 			@apply fontawesome flex h-full w-12 items-center justify-center bg-transparent;
@@ -72,7 +86,7 @@
 
 		@variant hocus {
 			&::before {
-				@apply bg-(--yrs-datasearch-input-btn-bg-hover) text-(--yrs-datasearch-input-btn-color-hover);
+				@apply bg-(--yrs-datasearch-input-btn-bg-color-hover);
 			}
 		}
 
