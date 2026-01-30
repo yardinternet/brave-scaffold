@@ -18,7 +18,7 @@
 
 	@variant lg {
 		--yrs-column-1-bg-color: var( --filters-sidebar-bg-color );
-		--yrs-column-1-border-radius: var( --filters-sidebar-radius );
+		--yrs-column-1-radius: var( --filters-sidebar-radius );
 		--yrs-column-1-padding: var( --filters-sidebar-padding );
 		--yrs-column-1-shadow: var( --filters-sidebar-shadow );
 	}
@@ -33,7 +33,7 @@
 		@apply gap-4 lg:grid-cols-12 lg:gap-8 xl:gap-10;
 
 		.yrs-column-1 {
-			@apply rounded-(--yrs-column-1-border-radius) bg-(--yrs-column-1-bg-color) p-(--yrs-column-1-padding) shadow-(--yrs-column-1-shadow) lg:col-span-4 xl:col-span-3;
+			@apply rounded-(--yrs-column-1-radius) bg-(--yrs-column-1-bg-color) p-(--yrs-column-1-padding) shadow-(--yrs-column-1-shadow) lg:col-span-4 xl:col-span-3;
 		}
 
 		.yrs-column-2 {
@@ -137,7 +137,7 @@
 	}
 
 	.yrs-card {
-		@apply rounded-theme relative bg-white shadow transition-all;
+		@apply relative rounded-(--card-radius) bg-(--card-bg-color) shadow-(--card-shadow) transition-all;
 
 		&:focus-within,
 		&:hover {
@@ -159,7 +159,7 @@
 		}
 
 		.yrs-card-label {
-			@apply mt-3 w-fit rounded bg-gray-100 px-2 py-1 text-xs leading-normal! sm:text-sm;
+			@apply pointer-events-none mt-3 w-fit rounded-(--card-label-radius) border-(length:--card-label-border-width) border-(--card-label-border-color) bg-(--card-label-bg-color) p-(--card-label-padding) text-sm font-(--card-label-font-weight) text-(--card-label-color);
 		}
 
 		.yrs-card-score {
