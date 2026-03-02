@@ -74,7 +74,7 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/loops/knowledgebase-loop.blade.php' => resource_path('views/blocks/FacetWP/loops/knowledgebase-loop.blade.php'),
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/templates/knowledgebase.blade.php' => resource_path('views/blocks/FacetWP/templates/knowledgebase.blade.php'),
 			__DIR__ . '/../stubs/resources/views/single-knowledgebase.blade.php' => resource_path('views/single-knowledgebase.blade.php'),
-			__DIR__ . '/../stubs/acf-json/group_66e0254a243fd.json' => base_path('acf-json/group_66e0254a243fd.json'),
+			__DIR__ . '/../stubs/FieldGroups/Knowledgebase.php' => app_path('FieldGroups/Knowledgebase.php'),
 		], 'knowledgebase');
 
 		$this->publishes([
@@ -88,11 +88,11 @@ class ScaffoldServiceProvider extends PackageServiceProvider
 			__DIR__ . '/../stubs/resources/views/blocks/FacetWP/templates/person.blade.php' => resource_path('views/blocks/FacetWP/templates/person.blade.php'),
 			__DIR__ . '/../stubs/resources/views/components/meta/person.blade.php' => resource_path('views/components/meta/person.blade.php'),
 			__DIR__ . '/../stubs/resources/views/single-person.blade.php' => resource_path('views/single-person.blade.php'),
-			__DIR__ . '/../stubs/acf-json/group_66e02ff47667d.json' => base_path('acf-json/group_66e02ff47667d.json'),
+			__DIR__ . '/../stubs/FieldGroups/Person.php' => app_path('FieldGroups/Person.php'),
 		], 'person');
 
 		$this->publishes([
-			__DIR__ . '/../stubs/acf-json/group_66e0254a243fe.json' => base_path('acf-json/group_66e0254a243fe.json'),
+			__DIR__ . '/../stubs/FieldGroups/Project.php' => app_path('FieldGroups/Project.php'),
 			__DIR__ . '/../stubs/Data/ProjectData.php' => app_path('Data/ProjectData.php'),
 			__DIR__ . '/../stubs/View/Components/Card/Project.php' => app_path('View/Components/Card/Project.php'),
 			__DIR__ . '/../stubs/config/facetwp/facets/project_region.php' => config_path('facetwp/facets/project_region.php'),
