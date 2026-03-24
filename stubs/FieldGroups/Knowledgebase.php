@@ -20,6 +20,7 @@ class Knowledgebase extends FieldGroup
 		return [
 			Relationship::make('Gerelateerde artikelen', 'knowledgebase_related')
 				->postTypes(['knowledgebase'])
+				->postStatus(['publish'])
 				->instructions('Standaard worden er 3 artikelen van hetzelfde type getoond. Als je zelf wilt bepalen welke artikelen getoond moeten worden, dan kun je dat hier selecteren.')
 				->filters(['search', 'taxonomy'])
 				->max(3),

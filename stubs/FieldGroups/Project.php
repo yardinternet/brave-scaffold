@@ -21,6 +21,7 @@ class Project extends FieldGroup
 		return [
 			Relationship::make('Gerelateerde projecten', 'project_related')
 				->postTypes(['project'])
+				->postStatus(['publish'])
 				->instructions('Standaard worden er 3 projecten van hetzelfde type getoond. Als je zelf wilt bepalen welke projecten getoond moeten worden, dan kun je dat hier selecteren.')
 				->filters(['search', 'taxonomy'])
 				->max(3),
