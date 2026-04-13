@@ -40,7 +40,7 @@
 		@if ($postData->isParent())
 			<h2 id="deelprojecten" class="alignwide">
 				{{ $postData->children()->count() > 1 ? __('Deelprojecten', 'sage') : __('Deelproject', 'sage') }}:</h2>
-			<div class="container mt-5 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+			<div class="auto-grid container mt-5">
 				@foreach ($postData->children() as $child)
 					<x-card.project :postData="$child" />
 				@endforeach
@@ -51,7 +51,7 @@
 			<h2 class="alignwide">
 				{{ $postData->related()->count() > 1 ? __('Gerelateerde projecten', 'sage') : __('Gerelateerd project', 'sage') }}
 			</h2>
-			<div class="container mt-5 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+			<div class="auto-grid container mt-5">
 				@foreach ($postData->related() as $related)
 					<x-card.project :postData="$related" />
 				@endforeach
