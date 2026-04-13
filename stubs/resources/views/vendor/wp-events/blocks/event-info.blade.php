@@ -25,16 +25,20 @@
 		<li class="flex items-baseline gap-x-4 gap-y-2">
 			<i class="fa-light text-primary fa-fw fa-map-marker-alt min-w-5"></i>
 			<span class="flex flex-col">
-				@if ($eventData->venue())
-					<span>{!! $eventData->venue()?->title() !!}</span>
-				@endif
-				{!! $eventData->formattedAddress !!}
-				@if ($eventData->venue()?->location?->googleMapsLink())
-					<span>
-						<a href="{{ $eventData->venue()?->location?->googleMapsLink() }}" target="_blank">
-							{{ __('Bekijk op Google Maps', 'sage') }}
-						</a>
-					</span>
+				@if ($eventData->isOnline())
+					{!! $eventData->isOnlineLabel() !!}
+				@elseif($venue = $eventData->venue())
+					<span>{!! $venue->title() !!}</span>
+					<span>{!! $venue->location?->formattedAddress() ?? '' !!}</span>
+					@if ($googleMapsLink = $venue->location?->googleMapsLink())
+						<span>
+							<a href="{{ $googleMapsLink }}" target="_blank">
+								Bekijk op Google Maps
+							</a>
+						</span>
+					@endif
+				@else
+					{!! $eventData->locationUnknown() !!}
 				@endif
 			</span>
 		</li>
