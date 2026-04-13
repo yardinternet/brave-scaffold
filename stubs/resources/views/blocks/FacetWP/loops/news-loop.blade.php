@@ -1,9 +1,9 @@
 @use(App\View\Components\Card\Enums\Direction)
 
 <div class="@xl:gap-6 flex flex-col gap-4">
-    @forelse ($postDataCollection as $postData)
-        <x-card.news :postData="$postData" :direction="Direction::FLUID" />
-    @empty
-        <x-facetwp.no-results />
-    @endforelse
+	@forelse ($postDataCollection as $postData)
+		<x-card.news :postData="$postData" :direction="Direction::FLUID" />
+	@empty
+		<x-facetwp.no-results />
+	@endforelse
 </div>
