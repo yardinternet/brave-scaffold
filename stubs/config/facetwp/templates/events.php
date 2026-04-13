@@ -26,7 +26,7 @@ return [
 		'filters' => [
 			[
 				'source' => 'meta',
-				'key' => 'cf/event_start_date',
+				'key' => 'cf/event_end_date',
 				'type' => 'DATE',
 				'compare' => '>=',
 				'value' => date('Y-m-d'),
