@@ -13,7 +13,7 @@ class Person extends FieldGroup
 {
 	public function getTitle(): string
 	{
-		return 'Persoon instellingen';
+		return 'Persooninstellingen';
 	}
 
 	public function getFields(): array
