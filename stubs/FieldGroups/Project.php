@@ -26,10 +26,10 @@ class Project extends FieldGroup
 				->filters(['search', 'taxonomy'])
 				->maxPosts(3),
 			TrueFalse::make('Niet tonen in overzicht', 'project_hide')
-				->stylisedUi(),
+				->stylized(),
 			TrueFalse::make('Is een informatiepagina', 'project_is_information_post')
 				->helperText('Vink dit aan als de post een informatiepagina is, en geen deelproject. Bijvoorbeeld: "Meedenken over de herinrichting Dorpsstraat" is een informatiepagina van het hoofdproject "Herinrichting Dorpsstraat".<br><br>Let op:<br>Vergeet niet ook een hoofdpagina te selecteren én de optie "Niet tonen in overzicht" aan te vinken.')
-				->stylisedUi(),
+				->stylized(),
 		];
 	}
 
