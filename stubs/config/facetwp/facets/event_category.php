@@ -9,7 +9,7 @@ return [
 	'source' => 'tax/event_category',
 	'parent_term' => '',
 	'modifier_type' => 'off',
-	'modifer_values' => '',
+	'modifier_values' => '',
 	'hierarchical' => 'yes',
 	'show_expanded' => 'no',
 	'preserve_ghosts' => 'yes',
