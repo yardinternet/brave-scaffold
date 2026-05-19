@@ -26,7 +26,11 @@ EP_HOST=
 ES_PUBLIC_URL=
 ```
 
-## 3. Add Reactive Search entrypoint to Vite
+## 3. Controleer pagination variabelen
+
+Zorg dat `variables.css` de `--pagination-*` variabelen bevat. Zo niet, kopieer ze over vanuit `brave`.
+
+## 4. Add Reactive Search entrypoint to Vite
 
 Update your `vite.config.js`:
 
@@ -38,7 +42,7 @@ export default braveConfig( {
 } );
 ```
 
-## 4. Register the Elasticsearch Hook
+## 5. Register the Elasticsearch Hook
 
 Add the `Elasticsearch.php` hook to your `hooks.php`:
 
@@ -48,7 +52,7 @@ return [
 ];
 ```
 
-## 5. Add the reactive search bar to the header
+## 6. Add the reactive search bar to the header
 
 Replace the current `<x-header.search-bar />` of the search-bar with the following in the  `header.blade.php`:
 
@@ -60,7 +64,7 @@ Replace the current `<x-header.search-bar />` of the search-bar with the followi
 @endif
 ```
 
-## 6. Activate the Plugin & Configure Settings
+## 7. Activate the Plugin & Configure Settings
 
 1. Activate the Yard Elasticsearch plugin in WordPress.
 2. Go to the settings page `/wp/wp-admin/admin.php?page=acf-options-yard-elastic`
