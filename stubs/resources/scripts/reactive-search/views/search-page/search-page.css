@@ -61,7 +61,7 @@
 	}
 
 	.yrs-datasearch-input {
-		@apply rounded-theme h-13 border-x-0 border-t-0 border-b-2 border-(--yrs-datasearch-input-border-color) bg-white py-3 pr-10 text-base shadow-sm;
+		@apply h-13 rounded-theme border-x-0 border-t-0 border-b-2 border-(--yrs-datasearch-input-border-color) bg-white py-3 pr-10 text-base shadow-sm;
 
 		&:focus {
 			@apply border-(--yrs-datasearch-input-border-color-focus);
@@ -129,7 +129,7 @@
 	}
 
 	.yrs-results-info {
-		@apply text-primary mb-4 justify-end text-sm;
+		@apply mb-4 justify-end text-sm text-primary;
 	}
 
 	.yrs-results-list {
@@ -171,24 +171,34 @@
 		}
 	}
 
+	.yrs-pagination {
+		@apply mb-8;
+	}
+
 	.yrs-pagination-list {
-		@apply justify-end gap-x-2 gap-y-4;
+		@apply m-(--pagination-item-margin) justify-end gap-x-(--pagination-item-gap-x) gap-y-(--pagination-item-gap-y);
 	}
 
 	.yrs-pagination-button {
-		@apply size-10 min-h-10 min-w-10 p-2 text-black no-underline transition-all;
+		@apply relative size-(--pagination-item-size) rounded-(--pagination-item-radius) p-2 text-black no-underline transition-all;
 
 		&:not( .is-active ) {
-			@apply hover:bg-primary-100;
+			@variant hocus {
+				@apply bg-(--pagination-item-bg-color-hover) text-(--pagination-item-color-hover);
+			}
 		}
 
 		&.is-active {
-			@apply font-bold;
+			@apply bg-(--pagination-current-bg-color) text-(--pagination-current-color);
+
+			&::after {
+				@apply absolute bottom-0 left-1/2 h-0.5 w-3/4 -translate-x-1/2 bg-(--pagination-current-underline-bg-color) content;
+			}
 		}
 	}
 
 	.yrs-pagination-button-prev {
-		@apply hover:bg-primary! border-primary text-primary mr-4 size-10 border text-[0px];
+		@apply mr-4 size-(--pagination-item-size) border border-(--pagination-prev-border-color) bg-(--pagination-prev-bg-color) text-[0px] text-(--pagination-prev-color);
 
 		&::before {
 			@apply fontawesome text-base text-inherit;
@@ -196,25 +206,24 @@
 		}
 
 		@variant hocus {
-			@apply bg-primary text-white;
+			@apply border-(--pagination-prev-border-color-hocus) bg-(--pagination-prev-bg-color-hocus) text-(--pagination-prev-color-hocus);
 		}
 	}
 
 	.yrs-pagination-button-next {
-		@apply bg-primary ml-4 size-10 text-[0px] text-white;
+		@apply ml-4 size-(--pagination-item-size) border border-(--pagination-next-border-color) bg-(--pagination-next-bg-color) text-[0px] text-(--pagination-next-color);
 
 		&::before {
-			@apply fontawesome text-base;
+			@apply fontawesome text-base text-inherit;
 			--fa-icon: '\f054';
 		}
 
 		@variant hocus {
-			@apply bg-primary-700!;
-			filter: brightness( 1 );
+			@apply border-(--pagination-next-border-color-hocus) bg-(--pagination-next-bg-color-hocus) text-(--pagination-next-color-hocus);
 		}
 	}
 
 	.yrs-pagination-info {
-		@apply text-right text-sm;
+		@apply mt-4 text-right text-sm;
 	}
 }
