@@ -32,7 +32,7 @@ class ElasticsearchScaffoldCommand extends Command
 			'--tag' => 'elasticsearch',
 		]);
 		$variablesPath = base_path('resources/styles/base/variables.css');
-		if (! file_exists($variablesPath) || ! str_contains(file_get_contents($variablesPath), '--pagination-')) {
+		if (! str_contains((string) file_get_contents($variablesPath), '--pagination-')) {
 			$this->warn('variables.css mist de shared elasticsearch/facetwp --pagination-* variabelen. Kopieer ze over vanuit brave.');
 		}
 
