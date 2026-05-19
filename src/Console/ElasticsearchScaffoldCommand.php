@@ -31,6 +31,7 @@ class ElasticsearchScaffoldCommand extends Command
 			'--provider' => 'Yard\\Brave\\Scaffold\\ScaffoldServiceProvider',
 			'--tag' => 'elasticsearch',
 		]);
+		$this->warn('Zorg dat variables.css de --pagination-* variabelen bevat. Zo niet, kopieer ze over vanuit brave.');
 		$this->info('You need to do some additional steps after running this scaffold. Please read the docs here:');
 		$this->line('https://github.com/yardinternet/brave-scaffold/blob/main/docs/elasticsearch.md');
 	}
