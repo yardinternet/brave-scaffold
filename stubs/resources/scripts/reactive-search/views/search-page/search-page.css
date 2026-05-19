@@ -180,7 +180,7 @@
 	}
 
 	.yrs-pagination-button {
-		@apply relative size-(--pagination-item-size) rounded-(--pagination-item-radius) p-2 text-black no-underline transition-all;
+		@apply relative size-(--pagination-item-size) min-h-auto min-w-auto rounded-(--pagination-item-radius) p-2 text-black no-underline transition-all;
 
 		&:not( .is-active ) {
 			@variant hocus {
