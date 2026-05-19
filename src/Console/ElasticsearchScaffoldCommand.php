@@ -33,7 +33,7 @@ class ElasticsearchScaffoldCommand extends Command
 		]);
 		$variablesPath = base_path('resources/styles/base/variables.css');
 		if (! str_contains((string) file_get_contents($variablesPath), '--pagination-')) {
-			$this->warn('variables.css mist de shared elasticsearch/facetwp --pagination-* variabelen. Kopieer ze over vanuit brave.');
+			$this->warn('variables.css is missing the shared --pagination-* variables. Copy them over from brave.');
 		}
 
 		$this->info('You need to do some additional steps after running this scaffold. Please read the docs here:');
