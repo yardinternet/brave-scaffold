@@ -11,7 +11,7 @@
 					<div>{{ __('Hoofdproject', 'sage') }}</div>
 					<a href="#deelprojecten">
 						{{ __('Naar alle deelprojecten', 'sage') }}
-						<i class="fa-light fa-arrow-down ml-4"></i>
+						<i class="fa-light fa-arrow-down ml-4" aria-hidden="true"></i>
 					</a>
 				@endif
 				@if ($postData->isChild() && !$postData->isInformationPost)
@@ -39,7 +39,8 @@
 	<x-slot:bottom>
 		@if ($postData->isParent())
 			<h2 id="deelprojecten" class="alignwide">
-				{{ $postData->children()->count() > 1 ? __('Deelprojecten', 'sage') : __('Deelproject', 'sage') }}:</h2>
+				{{ trans_choice(__('Deelproject|Deelprojecten', 'sage'), $postData->children()->count()) }}
+			</h2>
 			<div class="auto-grid container mt-5">
 				@foreach ($postData->children() as $child)
 					<x-card.project :postData="$child" />
@@ -49,7 +50,8 @@
 
 		@if ($postData->related()->isNotEmpty())
 			<h2 class="alignwide">
-				{{ $postData->related()->count() > 1 ? __('Gerelateerde projecten', 'sage') : __('Gerelateerd project', 'sage') }}
+				{{ trans_choice(__('Gerelateerd project|Gerelateerde projecten', 'sage'), $postData->related()->count()) }}
+			</h2>
 			</h2>
 			<div class="auto-grid container mt-5">
 				@foreach ($postData->related() as $related)

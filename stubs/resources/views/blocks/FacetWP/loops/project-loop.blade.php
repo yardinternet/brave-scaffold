@@ -4,6 +4,6 @@
 	@forelse ($postDataCollection as $postData)
 		<x-card.project :postData="$postData" :direction="Direction::FLUID" />
 	@empty
-		@include('blocks.FacetWP.partials.no-results')
+		<x-facetwp.no-results />
 	@endforelse
 </div>
