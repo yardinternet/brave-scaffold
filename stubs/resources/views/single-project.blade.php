@@ -52,7 +52,6 @@
 			<h2 class="alignwide">
 				{{ trans_choice(__('Gerelateerd project|Gerelateerde projecten', 'sage'), $postData->related()->count()) }}
 			</h2>
-			</h2>
 			<div class="auto-grid container mt-5">
 				@foreach ($postData->related() as $related)
 					<x-card.project :postData="$related" />
