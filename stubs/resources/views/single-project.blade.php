@@ -38,9 +38,7 @@
 
 	<x-slot:bottom>
 		@if ($postData->isParent())
-			<h2 id="deelprojecten" class="alignwide">
-				{{ trans_choice(__('Deelproject|Deelprojecten', 'sage'), $postData->children()->count()) }}
-			</h2>
+			<h2 id="deelprojecten" class="alignwide">{{ _n('Deelproject', 'Deelprojecten', $postData->children()->count(), 'sage') }}</h2>
 			<div class="auto-grid container mt-5">
 				@foreach ($postData->children() as $child)
 					<x-card.project :postData="$child" />
@@ -49,9 +47,7 @@
 		@endif
 
 		@if ($postData->related()->isNotEmpty())
-			<h2 class="alignwide">
-				{{ trans_choice(__('Gerelateerd project|Gerelateerde projecten', 'sage'), $postData->related()->count()) }}
-			</h2>
+			<h2 class="alignwide">{{ _n('Gerelateerd project', 'Gerelateerde projecten', $postData->related()->count(), 'sage') }}</h2>
 			<div class="auto-grid container mt-5">
 				@foreach ($postData->related() as $related)
 					<x-card.project :postData="$related" />
