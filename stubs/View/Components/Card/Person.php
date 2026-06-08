@@ -11,8 +11,8 @@ class Person extends Card
 	protected function hydrate(): void
 	{
 		$this->displayExcerpt ??= false;
-		$this->email ??= $this->postData->email;
-		$this->phone ??= $this->postData->phone;
+		$this->personEmail ??= $this->postData->email;
+		$this->personPhone ??= $this->postData->phone;
 		$this->subtitle ??= $this->postData->function;
 	}
 }

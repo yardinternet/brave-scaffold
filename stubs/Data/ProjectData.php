@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Data;
 
+use App\FieldGroups\Project as ProjectFieldGroup;
 use Illuminate\Support\Collection;
 use Yard\Data\Attributes\Meta;
 use Yard\Data\Attributes\MetaPrefix;
@@ -18,9 +19,9 @@ class ProjectData extends PostData
 {
 	use Related;
 
-	#[Meta]
+	#[Meta(ProjectFieldGroup::FIELD_RELATED)]
 	public array $related = [];
-	#[Meta]
+	#[Meta(ProjectFieldGroup::FIELD_IS_INFORMATION_POST)]
 	public bool $isInformationPost = false;
 
 	#[Terms]

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Data;
 
+use App\FieldGroups\Person as PersonFieldGroup;
 use Illuminate\Support\Collection;
 use Yard\Data\Attributes\Meta;
 use Yard\Data\Attributes\MetaPrefix;
@@ -16,11 +17,11 @@ use Yard\Data\TermData;
 #[TaxonomyPrefix(prefix: 'person')]
 class PersonData extends PostData
 {
-	#[Meta]
+	#[Meta(PersonFieldGroup::FIELD_FUNCTION)]
 	public string $function = '';
-	#[Meta]
+	#[Meta(PersonFieldGroup::FIELD_EMAIL)]
 	public string $email = '';
-	#[Meta]
+	#[Meta(PersonFieldGroup::FIELD_PHONE)]
 	public string $phone = '';
 
 	#[Terms]
