@@ -11,6 +11,10 @@ use Yard\Acf\Registrar\FieldGroup;
 
 class Person extends FieldGroup
 {
+	final public const FIELD_FUNCTION = 'person_function';
+	final public const FIELD_EMAIL = 'person_email';
+	final public const FIELD_PHONE = 'person_phone';
+
 	public function getTitle(): string
 	{
 		return 'Persooninstellingen';
@@ -19,9 +23,9 @@ class Person extends FieldGroup
 	public function getFields(): array
 	{
 		return [
-			Text::make('Functie', 'person_function'),
-			Email::make('E-mailadres', 'person_email'),
-			Text::make('Telefoonnummer', 'person_phone'),
+			static::FIELD_FUNCTION => Text::make('Functie', self::FIELD_FUNCTION),
+			static::FIELD_EMAIL => Email::make('E-mailadres', self::FIELD_EMAIL),
+			static::FIELD_PHONE => Text::make('Telefoonnummer', self::FIELD_PHONE),
 		];
 	}
 
