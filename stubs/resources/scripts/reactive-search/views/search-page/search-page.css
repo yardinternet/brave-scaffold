@@ -1,5 +1,6 @@
 @reference '@sage/styles/base/config.css';
 @reference '@sage/styles/base/utilities.css';
+@reference '@sage/styles/base/custom-variants.css';
 
 :root {
 	--yrs-datasearch-input-border-color: var( --input-border-color );
