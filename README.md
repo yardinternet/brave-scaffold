@@ -5,11 +5,12 @@
 [![Tests](https://github.com/yardinternet/brave-scaffold/actions/workflows/run-tests.yml/badge.svg?no-cache)](https://github.com/yardinternet/brave-scaffold/actions/workflows/run-tests.yml)
 [![Code Coverage Badge](https://github.com/yardinternet/brave-scaffold/blob/badges/coverage.svg)](https://github.com/yardinternet/brave-scaffold/actions/workflows/badges.yml)
 [![Lines of Code Badge](https://github.com/yardinternet/brave-scaffold/blob/badges/lines-of-code.svg)](https://github.com/yardinternet/brave-scaffold/actions/workflows/badges.yml)
+![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/yard/brave-scaffold/php)
+![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/yard/brave-scaffold/roots%2Facorn)
 
 ## Requirements
 
 - [Sage](https://github.com/roots/sage) >= 10.0
-- [Acorn](https://github.com/roots/acorn) >= 4.0
 
 ## Installation
 
