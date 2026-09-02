@@ -2,15 +2,11 @@ name: Tests
 
 on:
   pull_request:
-    paths:
-      - '**.php'
-      - '.github/workflows/run-tests.yml'
-      - 'phpunit.xml.dist'
-      - 'composer.json'
-      - 'composer.lock'
   workflow_dispatch:
 
 jobs:
   test:
-    uses: yardinternet/workflows/.github/workflows/run-laravel-testbench-tests.yml@main
+    uses: yardinternet/workflows/.github/workflows/run-laravel-testbench-tests.yml@poc/spatie-matrix
+    with:
+      laravel-versions: '["10.*","12.*"]'
     secrets: inherit
