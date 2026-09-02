@@ -5,6 +5,8 @@
 [![Tests](https://github.com/yardinternet/brave-scaffold/actions/workflows/run-tests.yml/badge.svg?no-cache)](https://github.com/yardinternet/brave-scaffold/actions/workflows/run-tests.yml)
 [![Code Coverage Badge](https://github.com/yardinternet/brave-scaffold/blob/badges/coverage.svg)](https://github.com/yardinternet/brave-scaffold/actions/workflows/badges.yml)
 [![Lines of Code Badge](https://github.com/yardinternet/brave-scaffold/blob/badges/lines-of-code.svg)](https://github.com/yardinternet/brave-scaffold/actions/workflows/badges.yml)
+![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/yard/brave-scaffold/php)
+![Packagist Dependency Version](https://img.shields.io/packagist/dependency-v/yard/brave-scaffold/roots%2Facorn)
 
 ## Requirements
 
