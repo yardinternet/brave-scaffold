@@ -15,17 +15,3 @@ updates:
           - "*"
     commit-message:
       prefix: "(chore)"
-
-  # Maintain dependencies for npm
-  # - package-ecosystem: "npm"
-  #   directory: "/"
-  #   schedule:
-  #     interval: "weekly"
-  #   groups:
-  #     npm:
-  #       patterns:
-  #         - "*"
-  #   commit-message:
-  #     prefix: "(chore)"
-  #   versioning-strategy: lockfile-only
-
