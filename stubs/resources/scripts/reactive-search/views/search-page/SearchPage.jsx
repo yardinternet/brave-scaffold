@@ -19,23 +19,8 @@ const SearchPage = () => {
 	}
 
 	return (
-		<Base
-			app={ window.YS.indices.join() }
-			url={ window.YS.url }
-			theme={ theme }
-		>
-			<ReactiveSearchPage
-				boosts={ window.YS.boosts }
-				dataField={ window.YS.dataFields }
-				filters={ window.YS.filters }
-				fuzziness={
-					window.YS.fuzziness === 'AUTO'
-						? window.YS.fuzziness
-						: parseInt( window.YS.fuzziness )
-				}
-				mustMatch={ window.YS.mustMatch }
-				placeholder="Waar bent u naar op zoek?"
-			/>
+		<Base theme={ theme }>
+			<ReactiveSearchPage placeholder="Waar bent u naar op zoek?" />
 		</Base>
 	);
 };

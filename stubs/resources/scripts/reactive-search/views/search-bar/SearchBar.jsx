@@ -19,20 +19,8 @@ const SearchBar = () => {
 	}
 
 	return (
-		<Base
-			app={ window.YS.indices.join() }
-			url={ window.YS.url }
-			theme={ theme }
-		>
+		<Base theme={ theme }>
 			<ReactiveSearchBar
-				boosts={ window.YS.boosts }
-				dataFields={ window.YS.dataFields }
-				fuzziness={
-					window.YS.fuzziness === 'AUTO'
-						? window.YS.fuzziness
-						: parseInt( window.YS.fuzziness )
-				}
-				mustMatch={ window.YS.mustMatch }
 				openButtonText="Zoeken"
 				placeholder="Waar bent u naar op zoek?"
 			/>
