@@ -2,7 +2,7 @@
  * External dependencies
  */
 import {
-	Base,
+	ReactiveBase,
 	SearchPage as ReactiveSearchPage,
 } from '@yardinternet/reactive-search';
 
@@ -12,17 +12,10 @@ import {
 import { theme } from '../../config/theme';
 import './search-page.css';
 
-const SearchPage = () => {
-	if ( ! window.YS || ! window.YS.indices ) {
-		console.error( 'Error: Yard Elasticsearch indices has not been set.' ); // eslint-disable-line no-console
-		return <></>;
-	}
-
-	return (
-		<Base theme={ theme }>
-			<ReactiveSearchPage placeholder="Waar bent u naar op zoek?" />
-		</Base>
-	);
-};
+const SearchPage = () => (
+	<ReactiveBase theme={ theme }>
+		<ReactiveSearchPage placeholder="Waar bent u naar op zoek?" />
+	</ReactiveBase>
+);
 
 export default SearchPage;
