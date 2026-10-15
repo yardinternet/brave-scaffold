@@ -13,7 +13,7 @@ After scaffolding, follow these steps:
 Install the Yard Elasticsearch plugin and the Reactive Search npm package:
 
 ```shell
-composer require plugin/yard-elasticsearch wpackagist-plugin/elasticpress  && pnpm install @yardinternet/reactive-search@^1.16.1
+composer require plugin/yard-elasticsearch wpackagist-plugin/elasticpress  && pnpm install @yardinternet/reactive-search
 ```
 
 ## 2. Add the Elasticsearch `.env` variables

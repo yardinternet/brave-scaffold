@@ -9,6 +9,7 @@ describe('reactive-search view stubs', function () {
 		expect($contents)
 			->toContain('<ReactiveBase theme={ theme }>')
 			->not->toContain('window.YS')
+			->not->toContain('windowConfig')
 			->not->toMatch('/\bBase,/');
 	})->with([
 		'search-bar/SearchBar.jsx',
