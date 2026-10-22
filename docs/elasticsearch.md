@@ -26,9 +26,9 @@ EP_HOST=
 ES_PUBLIC_URL=
 ```
 
-## 3. Check pagination and search field variables
+## 3. Check pagination and search variables
 
-Make sure `variables.css` contains the `--pagination-*` and `--search-field-*` variables. If not, copy them over from `brave`.
+Make sure `variables.css` contains the `--pagination-*`, `--search-field-*` and `--search-trigger-*` variables. If not, copy them over from `brave`.
 
 ## 4. Add Reactive Search entrypoint to Vite
 
