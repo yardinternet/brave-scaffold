@@ -3,14 +3,14 @@
 @reference '@sage/styles/base/custom-variants.css';
 
 :root {
-	--yrs-datasearch-input-border-color: var( --search-field-border-color );
+	--yrs-datasearch-input-border-color: var( --search-input-border-color );
 	--yrs-datasearch-input-border-color-focus: var(
-		--search-field-border-color-focus
+		--search-input-border-color-focus
 	);
-	--yrs-datasearch-input-btn-color: var( --search-field-button-color );
-	--yrs-datasearch-input-btn-bg-color: var( --search-field-button-bg-color );
+	--yrs-datasearch-input-btn-color: var( --search-input-button-color );
+	--yrs-datasearch-input-btn-bg-color: var( --search-input-button-bg-color );
 	--yrs-datasearch-input-btn-bg-color-hover: var(
-		--search-field-button-bg-color-hover
+		--search-input-button-bg-color-hover
 	);
 
 	@variant lg {
