@@ -35,6 +35,9 @@ class ElasticsearchScaffoldCommand extends Command
 		if (! str_contains((string) file_get_contents($variablesPath), '--pagination-')) {
 			$this->warn('variables.css is missing the shared --pagination-* variables. Copy them over from brave.');
 		}
+		if (! str_contains((string) file_get_contents($variablesPath), '--search-field-')) {
+			$this->warn('variables.css is missing the shared --search-field-* variables. Copy them over from brave.');
+		}
 
 		$this->info('You need to do some additional steps after running this scaffold. Please read the docs here:');
 		$this->line('https://github.com/yardinternet/brave-scaffold/blob/main/docs/elasticsearch.md');
