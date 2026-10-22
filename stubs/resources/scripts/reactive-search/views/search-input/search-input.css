@@ -33,7 +33,7 @@
 			@apply shadow-none;
 
 			.yrs-datasearch-autosuggest-input {
-				@apply ring-primary border-(--search-field-border-color) focus:border-(--search-field-border-color-focus) h-(--yrs-search-input-height) rounded-none py-3! pr-16! pl-4! shadow-none;
+				@apply ring-primary border-(--search-input-border-color) focus:border-(--search-input-border-color-focus) h-(--yrs-search-input-height) rounded-none py-3! pr-16! pl-4! shadow-none;
 
 				+ div > div {
 					@apply p-0;
@@ -45,7 +45,7 @@
 			}
 
 			.yrs-search-bar-btn-submit {
-				@apply hocus:bg-(--search-field-button-bg-color-hover) absolute top-0 right-0 h-full w-18 bg-(--search-field-button-bg-color) text-2xl text-(--search-field-button-color) transition;
+				@apply hocus:bg-(--search-input-button-bg-color-hover) absolute top-0 right-0 h-full w-18 bg-(--search-input-button-bg-color) text-2xl text-(--search-input-button-color) transition;
 
 				&::before {
 					@apply fontawesome;
