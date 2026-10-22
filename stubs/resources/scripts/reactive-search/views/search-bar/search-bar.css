@@ -4,10 +4,10 @@
 
 .yrs-search-bar-container {
 	.yrs-search-bar-btn-open {
-		@apply flex h-11.5 flex-col items-center justify-between text-(--search-trigger-color) transition-all lg:min-h-(--search-trigger-size) lg:min-w-(--search-trigger-size) lg:justify-center lg:rounded-(--search-trigger-radius) lg:border lg:border-(--search-trigger-border-color) lg:bg-(--search-trigger-bg-color);
+		@apply flex min-h-11.5 flex-col items-center justify-between text-(--search-trigger-color) transition-all lg:min-h-(--search-trigger-size) lg:min-w-(--search-trigger-size) lg:justify-center lg:rounded-(--search-trigger-radius) lg:border lg:border-(--search-trigger-border-color) lg:bg-(--search-trigger-bg-color);
 
 		&::before {
-			@apply fontawesome pointer-events-none text-4xl leading-none transition max-lg:flex max-lg:size-(--search-trigger-icon-size) max-lg:items-center max-lg:justify-center max-lg:rounded-(--search-trigger-radius) max-lg:bg-(--search-trigger-icon-bg-color) max-lg:outline max-lg:-outline-offset-1 max-lg:outline-(--search-trigger-icon-border-color) md:text-2xl;
+			@apply fontawesome pointer-events-none text-4xl leading-none transition max-lg:flex max-lg:size-(--search-trigger-icon-size) max-lg:shrink-0 max-lg:items-center max-lg:justify-center max-lg:rounded-(--search-trigger-radius) max-lg:bg-(--search-trigger-icon-bg-color) max-lg:outline max-lg:-outline-offset-1 max-lg:outline-(--search-trigger-icon-border-color) md:text-2xl;
 			--fa-icon: '\f002';
 			--fa-weight: 400;
 		}
