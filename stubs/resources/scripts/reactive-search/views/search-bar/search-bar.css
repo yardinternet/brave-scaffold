@@ -43,7 +43,7 @@
 
 	.yrs-search-bar-btn-submit,
 	.yrs-search-bar-btn-close {
-		@apply size-8 min-w-8 sm:text-lg xl:text-xl;
+		@apply size-8 shrink-0 sm:text-lg xl:text-xl;
 
 		&::before {
 			@apply fontawesome transition;
